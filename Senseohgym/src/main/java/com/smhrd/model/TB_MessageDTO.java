@@ -1,41 +1,35 @@
 package com.smhrd.model;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- * Servlet implementation class TB_MessageDTO
- */
-@WebServlet("/TB_MessageDTO")
-public class TB_MessageDTO extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TB_MessageDTO() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+public class TB_MessageDTO {
+	
+	private int msg_seq; // 메시지순번
+	private String mb_id;
+	private String msg_content; // 메시지내용
+	private String msg_date; // 작성일자
+	
+	public int getMsg_seq() {
+		return msg_seq;
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	public void setMsg_seq(int msg_seq) {
+		this.msg_seq = msg_seq;
 	}
-
+	public String getMb_id() {
+		return mb_id;
+	}
+	public void setMb_id(String mb_id) {
+		this.mb_id = mb_id;
+	}
+	public String getMsg_content() {
+		return msg_content;
+	}
+	public void setMsg_content(String msg_content) {
+		this.msg_content = msg_content;
+	}
+	public String getMsg_date() {
+		return msg_date;
+	}
+	public void setMsg_date(String msg_date) {
+		this.msg_date = msg_date;
+	}
+	
 }
