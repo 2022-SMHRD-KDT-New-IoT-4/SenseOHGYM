@@ -12,10 +12,25 @@
         android:theme="@style/Theme.SenseOhGym"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Rev1_1_3Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Rev1_1_2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Rev1_1_1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Rev1_1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".BoardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RevActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
