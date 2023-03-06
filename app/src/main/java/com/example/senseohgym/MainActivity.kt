@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, BoardActivity::class.java)
             startActivity(intent)
         }
+        btnLog.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
