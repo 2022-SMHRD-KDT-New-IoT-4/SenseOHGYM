@@ -22,7 +22,7 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <Button
-        android:id="@+id/btnEx2"
+        android:id="@+id/btnEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_sub"
@@ -33,25 +33,25 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
-        android:text="실시간 기구 사용 여부"
+        android:text="기구를 선택"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <Button
-        android:id="@+id/btnEx3"
+        android:id="@+id/btnIntro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/btn_sub"
         android:text="운동기구 3"
-        app:layout_constraintEnd_toEndOf="@+id/btnEx2"
-        app:layout_constraintStart_toStartOf="@+id/btnEx2"
-        app:layout_constraintTop_toBottomOf="@+id/btnEx2" />
+        app:layout_constraintEnd_toEndOf="@+id/btnEx"
+        app:layout_constraintStart_toStartOf="@+id/btnEx"
+        app:layout_constraintTop_toBottomOf="@+id/btnEx" />
 
     <TextView
         android:id="@+id/textView"
@@ -73,7 +73,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/btn_sub"
         android:text="운동기구 1"
-        app:layout_constraintBottom_toTopOf="@+id/btnEx2"
-        app:layout_constraintEnd_toEndOf="@+id/btnEx2"
-        app:layout_constraintStart_toStartOf="@+id/btnEx2" />
+        app:layout_constraintBottom_toTopOf="@+id/btnEx"
+        app:layout_constraintEnd_toEndOf="@+id/btnEx"
+        app:layout_constraintStart_toStartOf="@+id/btnEx" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,19 +2,12 @@ package com.example.senseohgym
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-class LoginActivity : AppCompatActivity() {
+// 헬스장 소개 액티비티 입니다
+class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_intro)
 
-        // 두번째 commit test
-        // 경진이 테스트요
-
-
-        finish()
 
     }
 }
-
-
