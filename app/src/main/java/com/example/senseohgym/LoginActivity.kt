@@ -9,6 +9,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         // 두번째 commit test
+        // 경진이 테스트요
 
         val num3 = 3
         val num5 = 5
