@@ -22,36 +22,15 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <Button
-        android:id="@+id/btnEx"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_sub"
-        android:text="운동기구 2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <Button
+        android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
-        android:text="기구를 선택"
+        android:text="예약하기"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <Button
-        android:id="@+id/btnIntro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/btn_sub"
-        android:text="운동기구 3"
-        app:layout_constraintEnd_toEndOf="@+id/btnEx"
-        app:layout_constraintStart_toStartOf="@+id/btnEx"
-        app:layout_constraintTop_toBottomOf="@+id/btnEx" />
 
     <TextView
         android:id="@+id/textView"
@@ -66,14 +45,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnEx1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/btn_sub"
-        android:text="운동기구 1"
-        app:layout_constraintBottom_toTopOf="@+id/btnEx"
-        app:layout_constraintEnd_toEndOf="@+id/btnEx"
-        app:layout_constraintStart_toStartOf="@+id/btnEx" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcRev"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

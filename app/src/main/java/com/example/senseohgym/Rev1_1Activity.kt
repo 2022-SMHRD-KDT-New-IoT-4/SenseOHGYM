@@ -5,31 +5,35 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 // 실시간 기구 사용여부에 .. 들어오면 운동 기구 목록이 보여지는 화면입니다
+// 여기서 바로 기구 예약하기를 사용할 수 있어야함..
 class Rev1_1Activity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rev11)
 
-        val btnEx1 = findViewById<Button>(R.id.btnEx1)
-        val btnEx2 = findViewById<Button>(R.id.btnEx)
-        val btnEx3 = findViewById<Button>(R.id.btnIntro)
+        val rcRev = findViewById<RecyclerView>(R.id.rcRev)
 
-        btnEx1.setOnClickListener {
-            val intent = Intent(this, Rev1_1_1Activity::class.java)
-            startActivity(intent)
-        }
-        btnEx2.setOnClickListener {
-            val intent = Intent(this, Rev1_1_2Activity::class.java)
-            startActivity(intent)
-        }
-        btnEx3.setOnClickListener {
-            val intent = Intent(this, Rev1_1_3Activity::class.java)
-            startActivity(intent)
+        val revExer = ArrayList<RevVo> ()
 
-        }
+        revExer.add(RevVo("운동기구1", "예약여부"))
+        revExer.add(RevVo("운동기구2", "예약여부"))
+        revExer.add(RevVo("운동기구3", "예약여부"))
+        revExer.add(RevVo("운동기구4", "예약여부"))
+        revExer.add(RevVo("운동기구5", "예약여부"))
+        revExer.add(RevVo("운동기구6", "예약여부"))
+        revExer.add(RevVo("운동기구7", "예약여부"))
+        revExer.add(RevVo("운동기구8", "예약여부"))
+        revExer.add(RevVo("운동기구9", "예약여부"))
+
+        val adapter = RevAdapter(applicationContext, revExer)
+        rcRev.adapter = adapter
+
+        rcRev.layoutManager = LinearLayoutManager(this)
 
 
     }
