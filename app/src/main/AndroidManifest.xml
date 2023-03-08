@@ -14,9 +14,7 @@
         <activity
             android:name=".ChartActivity"
             android:exported="false" />
-        <activity
-            android:name=".MyHealthActivity"
-            android:exported="false" />
+
         <activity
             android:name=".PopupActivity"
             android:exported="false"
@@ -51,24 +49,14 @@
         <activity
             android:name=".ExerActivity"
             android:exported="false" />
-        <activity
-            android:name=".Rev1_1_3Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Rev1_1_2Activity"
-            android:exported="false" />
-        <activity
-            android:name=".Rev1_1_1Activity"
-            android:exported="false" />
+
         <activity
             android:name=".Rev1_1Activity"
             android:exported="false" />
         <activity
             android:name=".BoardActivity"
             android:exported="false" />
-        <activity
-            android:name=".RevActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
