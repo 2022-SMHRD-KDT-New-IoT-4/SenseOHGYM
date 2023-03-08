@@ -6,23 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#20347C"
-    android:backgroundTint="#112350"
-    >
+    android:backgroundTint="#112350">
 
     <EditText
         android:id="@+id/username"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="28dp"
         android:background="#FFFDFD"
         android:backgroundTint="#F6F4F4"
-        android:hint="id"
+        android:hint="이름"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/gymName" />
 
     <EditText
         android:id="@+id/password"
@@ -31,7 +30,7 @@
         android:layout_marginTop="28dp"
         android:background="#FFFDFD"
         android:backgroundTint="#F4EFEF"
-        android:hint="password"
+        android:hint="카드번호"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
         android:selectAllOnFocus="true"
@@ -41,53 +40,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
+    <EditText
+        android:id="@+id/gymName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFFDFD"
+        android:backgroundTint="#F4EFEF"
+        android:hint="헬스장이름"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:textColor="#020202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hell" />
+
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_gravity="start"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="200dp"
         android:backgroundTint="#3498DB"
         android:enabled="false"
         android:text="로그인"
         android:textColor="#FBFBFB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        tools:layout_editor_absoluteX="156dp"
+        tools:layout_editor_absoluteY="487dp" />
 
     <TextView
         android:id="@+id/hell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:text="헬림이"
         android:textColor="#FBFAFA"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="192dp" />
 
     <ImageView
         android:id="@+id/ivMain"
         android:layout_width="139dp"
         android:layout_height="109dp"
-        app:layout_constraintBottom_toTopOf="@+id/hell"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/main" />
-
-    <Button
-        android:id="@+id/btnJoin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:backgroundTint="#5333C5"
-        android:text="회원가입"
-        app:layout_constraintBottom_toBottomOf="@+id/btnLogin"
-        app:layout_constraintStart_toEndOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+        app:srcCompat="@drawable/main"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="83dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
