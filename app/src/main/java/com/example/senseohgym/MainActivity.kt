@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         // 2번째 이미지 예약/취소로 가지는
         btnRev.setOnClickListener {
-            val intent = Intent(this, Rev1_1Activity::class.java)
+            val intent = Intent(this@MainActivity, Rev1_1Activity::class.java)
             startActivity(intent)
         }
 
