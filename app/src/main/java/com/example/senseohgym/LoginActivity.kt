@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 }
-
-

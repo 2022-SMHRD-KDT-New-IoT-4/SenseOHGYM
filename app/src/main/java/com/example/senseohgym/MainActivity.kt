@@ -16,34 +16,31 @@ class MainActivity : AppCompatActivity() {
         val btnMachine = findViewById<ImageButton>(R.id.btnMachine)
         val btnRev = findViewById<ImageButton>(R.id.btnRev)
         val btnExerInfo = findViewById<ImageButton>(R.id.btnExerInfo)
-        val btnBoard = findViewById<ImageButton>(R.id.btnBoard)
-        val btnMsg = findViewById<ImageButton>(R.id.btnMsg)
-        val btnLog = findViewById<ImageButton>(R.id.btnLog)
+        val btnSetting = findViewById<ImageButton>(R.id.btnSetting)
 
 
-        // 예약/취소로 가지는
+        // 1번째 운동정보로 가지는 ( 차트랑 표 있는.. )
+        btnMachine.setOnClickListener {
+            val intent = Intent(this, ChartActivity::class.java)
+            startActivity(intent)
+        }
 
+        // 2번째 이미지 예약/취소로 가지는
         btnRev.setOnClickListener {
-            val intent = Intent(this, Rev1_1Activity::class.java)
+            val intent = Intent(this@MainActivity, Rev1_1Activity::class.java)
             startActivity(intent)
         }
-        // 게시판으로 가지는
-        btnBoard.setOnClickListener {
-            val intent = Intent(this, BoardActivity::class.java)
-            startActivity(intent)
-        }
-        btnLog.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
+
+        // 3번째 기구정보로 가지는..
         btnExerInfo.setOnClickListener {
             val intent = Intent(this, ExerActivity::class.java)
             startActivity(intent)
         }
 
+        // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
+        btnSetting.setOnClickListener {
 
-
-
+        }
 
 
     }
