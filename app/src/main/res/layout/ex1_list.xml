@@ -28,6 +28,7 @@
         android:textColor="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toEndOf="@+id/exImg1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,6 +41,7 @@
         android:text="TextView"
         android:textColor="#FFFFFF"
         android:textSize="14dp"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toEndOf="@+id/exImg1"
         app:layout_constraintTop_toBottomOf="@+id/tvName1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

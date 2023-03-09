@@ -5,25 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#112350"
-    android:backgroundTint="#112350"
     tools:context=".MachineDataActivity">
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent">
-
-    </com.github.mikephil.charting.charts.PieChart>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#112350"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="125dp"
         android:layout_height="125dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/piechart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/piechart"
         app:srcCompat="@drawable/round" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

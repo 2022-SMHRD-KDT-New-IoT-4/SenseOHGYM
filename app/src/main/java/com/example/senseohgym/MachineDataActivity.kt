@@ -4,30 +4,22 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import java.text.NumberFormat
-import java.util.Date
+
 
 class MachineDataActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_machine_data)
 
-
         val pieChart: PieChart = findViewById(R.id.piechart)
         pieChart.setExtraOffsets(40f, 0f, 40f, 0f)
-
-        // 선 추가? 커스텀? 뭐야 이거..
-        // pieChart.renderer = CustomPieChartRenderer(pieChart, 10f)
 
         class CustomPieEntry(
             x: Float,
@@ -44,11 +36,9 @@ class MachineDataActivity : AppCompatActivity() {
             CustomPieEntry(5f,"담희"),
             CustomPieEntry(5f,"윤한"),)
 
-
         // 차트 색상들
 
         val dataSet = PieDataSet(entries, "Pie Data")
-
 
         val colors = listOf(
             Color.parseColor("#4777c0"),
@@ -70,11 +60,11 @@ class MachineDataActivity : AppCompatActivity() {
         dataSet.isUsingSliceColorAsValueLineColor = true
 
 
-
         // 글자 사이즈
         dataSet.yValuePosition = PieDataSet.ValuePosition.OUTSIDE_SLICE
-        dataSet.valueTextSize = 16f
+        dataSet.valueTextSize = 20f
         dataSet.valueTypeface = Typeface.DEFAULT_BOLD
+
 
         // Value formatting
         dataSet.valueFormatter = object : ValueFormatter() {
@@ -84,26 +74,25 @@ class MachineDataActivity : AppCompatActivity() {
                 formatter.format(value / 100f)
         }
         pieChart.setUsePercentValues(true)
-
-
-
         dataSet.selectionShift = 3f
 
         // Hole
         pieChart.isDrawHoleEnabled = true
         pieChart.holeRadius = 50f
 
-        // Center text
+        // 중앙 텍스트 스타일인데 변경하기 힘들 듯...
         pieChart.setDrawCenterText(true)
         pieChart.setCenterTextSize(20f)
         pieChart.setCenterTextTypeface(Typeface.DEFAULT_BOLD)
         pieChart.setCenterTextColor(Color.parseColor("#FFFFFF"))
         pieChart.centerText = "기구 사용\n데이터"
 
-        // 파이 중앙 컬러 변경
-        pieChart.setBackgroundColor(Color.parseColor("#112340"))
+        // 차트 안의 텍스트 스타일 변경...
+        // val face = Typeface.createFromAsset(context.assets, "cute")
+        // pieChart.setValueTypeface(face)
 
-
+        // 차트 백그라운 변경
+        //pieChart.setBackgroundColor(Color.parseColor("#112340"))
 
         // Disable legend & description
         pieChart.legend.isEnabled = false

@@ -28,6 +28,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
+        android:fontFamily="@font/cute"
         android:text="코어"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -36,6 +37,7 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fontFamily="@font/cute"
         android:gravity="center"
         android:text="TextView"
         android:textColor="#FFFFFF"

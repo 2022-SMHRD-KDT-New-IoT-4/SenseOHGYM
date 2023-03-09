@@ -29,6 +29,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
         android:text="예약하기"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -38,6 +39,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="TextView"
+        android:fontFamily="@font/cute"
         android:textColor="#FFFFFF"
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
