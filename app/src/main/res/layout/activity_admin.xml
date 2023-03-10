@@ -69,15 +69,6 @@
         app:srcCompat="@drawable/exer_reg" />
 
     <ImageView
-        android:id="@+id/MemberManage"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:srcCompat="@drawable/community" />
-
-    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="0dp"
         android:layout_height="200dp"
@@ -85,5 +76,17 @@
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:srcCompat="@drawable/call" />
+
+    <ImageButton
+        android:id="@+id/MemberManage"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:backgroundTint="#112350"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:srcCompat="@drawable/community" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
