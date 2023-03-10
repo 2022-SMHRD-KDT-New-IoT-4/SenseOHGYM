@@ -29,55 +29,31 @@ class Rev1_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_rev11)
 
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
-//        val exer_name = findViewById<TextView>(R.id.exer_name)
-//        val rev_ox = findViewById<TextView>(R.id.rev_ox)
-//        val btn_rev = findViewById<Button>(R.id.btn_rev)
 
-        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
-        var url =
-            "http://221.156.185.168:8081/Senseohgym/Member_Login.do"
+//        queue = Volley.newRequestQueue(this@Rev1_1Activity)
+
+//        var url =
+//            "http://221.156.185.168:8081/Senseohgym/Member_Login.do"
 
         val revExer = ArrayList<RevVo>()
 
-        revExer.add(RevVo("운동기구1", "예약여부"))
-        revExer.add(RevVo("운동기구2", "예약여부"))
-        revExer.add(RevVo("운동기구3", "예약여부"))
-        revExer.add(RevVo("운동기구4", "예약여부"))
-        revExer.add(RevVo("운동기구5", "예약여부"))
-        revExer.add(RevVo("운동기구6", "예약여부"))
-        revExer.add(RevVo("운동기구7", "예약여부"))
-        revExer.add(RevVo("운동기구8", "예약여부"))
-        revExer.add(RevVo("운동기구9", "예약여부"))
+        revExer.add(RevVo("벤치 프레스", "예약여부"))
+        revExer.add(RevVo("덤벨 벤치 프레스", "예약여부"))
+        revExer.add(RevVo("데드리프트", "예약여부"))
+        revExer.add(RevVo("바벨 로우", "예약여부"))
+        revExer.add(RevVo("바벨 스쿼트", "예약여부"))
+        revExer.add(RevVo("런지", "예약여부"))
+        revExer.add(RevVo("오버헤드 프레스", "예약여부"))
+        revExer.add(RevVo("덤벨 숄더 프레스", "예약여부"))
+        revExer.add(RevVo("레그레이즈", "예약여부"))
+        revExer.add(RevVo("크런치", "예약여부"))
 
         val adapter = RevAdapter(applicationContext, revExer)
         rcRev.adapter = adapter
         rcRev.layoutManager = LinearLayoutManager(this)
 
-//        btn_rev.setOnClickListener {
-//
-//            val exer_name = exer_name.text.toString()
-//
-//            intent.putExtra("exer_name", exer_name)
-//
-//            request = object : StringRequest(
-//                Method.POST, url,
-//                { response ->
-//                    Log.d("결과", response.toString())
-//                },
-//                { error ->
-//                    Log.d("통신오류", error.printStackTrace().toString());
-//                }
-//            ) {
-//                @Throws(AuthFailureError::class)
-//                override fun getParams(): MutableMap<String, String>? {
-//                    val params: MutableMap<String, String> = HashMap()
-//                    params["exer_name"] = exer_name
-//                    return params
-//                }
-//            }
-//        }
-//        request.setShouldCache(false)
-//        queue.add(request)
+
+
     }
 }

@@ -33,9 +33,9 @@ class MemberRegActivity : AppCompatActivity() {
         rg.setOnCheckedChangeListener{
                 group, checkid ->
             if (checkid == R.id.chMan){
-                check = "남자"
+                check = "남"
             }else{
-                check = "여자"
+                check = "여"
             }
         }
 

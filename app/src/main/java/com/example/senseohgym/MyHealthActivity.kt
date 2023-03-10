@@ -13,14 +13,14 @@ class MyHealthActivity : AppCompatActivity() {
         val btnHealthTime = findViewById<Button>(R.id.btnHealthTime)
         val btnCount = findViewById<Button>(R.id.btnCount)
 
-        btnHealthTime.setOnClickListener{
-           val intent =  Intent(this, ChartActivity::class.java)
+        btnHealthTime.setOnClickListener {
+            val intent = Intent(this, ChartActivity::class.java)
 
             // 보내줄 데이터...?
             startActivity(intent)
         }
 
-        btnCount.setOnClickListener{
+        btnCount.setOnClickListener {
             val intent = Intent(this, hyesuActivity::class.java)
             startActivity(intent)
         }
