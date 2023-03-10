@@ -25,6 +25,7 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/hyesuChart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -19,6 +19,7 @@
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:textColor="#000000"
+        android:fontFamily="@font/cute"
         app:layout_constraintEnd_toEndOf="@+id/etGymName"
         app:layout_constraintStart_toStartOf="@+id/etGymName"
         app:layout_constraintTop_toBottomOf="@+id/etGymName" />
@@ -63,8 +64,9 @@
         android:layout_gravity="start"
         android:layout_marginTop="20dp"
         android:backgroundTint="#3498DB"
-        android:enabled="false"
+        android:enabled="true"
         android:text="로그인"
+        android:fontFamily="@font/cute"
         android:textColor="#FBFBFB"
         app:layout_constraintEnd_toEndOf="@+id/etCard"
         app:layout_constraintStart_toStartOf="@+id/etCard"
@@ -79,6 +81,7 @@
         android:textColor="#FBFAFA"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/etGymName"
         app:layout_constraintEnd_toEndOf="@+id/etGymName"
         app:layout_constraintStart_toStartOf="@+id/etGymName" />
