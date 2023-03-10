@@ -3,7 +3,12 @@ package com.example.senseohgym
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -14,6 +19,9 @@ import java.text.NumberFormat
 
 class MachineDataActivity : AppCompatActivity() {
 
+    private lateinit var queue: RequestQueue
+    private lateinit var request : StringRequest
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_machine_data)
@@ -21,12 +29,27 @@ class MachineDataActivity : AppCompatActivity() {
         val pieChart: PieChart = findViewById(R.id.piechart)
         pieChart.setExtraOffsets(40f, 0f, 40f, 0f)
 
+        queue = Volley.newRequestQueue(this)
+
+        val url = "http://211.107.188.212:8081/Senseohgym/Member_Login.do"
+
+        request = StringRequest(
+            Request.Method.POST, url,
+            {response ->
+
+            },
+            {error ->
+                Log.d("통신오류", error.printStackTrace().toString())
+            }
+        )
+
         class CustomPieEntry(
             x: Float,
             y: String
         ) : PieEntry(x, y)
 
         val entries = listOf(
+            // 서버에서 보내준 값을 넣는 부분
             CustomPieEntry(40f, "런닝머신"),
             CustomPieEntry(10f, "바벨"),
             CustomPieEntry(10f, "싸이클"),

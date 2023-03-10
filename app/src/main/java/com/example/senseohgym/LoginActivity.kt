@@ -32,14 +32,10 @@ class LoginActivity : AppCompatActivity() {
         var url = "http://211.107.188.212:8081/Senseohgym/Member_Login.do"
 
         btnLogin.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            var intent = Intent(this, MainActivity::class.java)
             var gymName = etGymName.text.toString()
             var name = etName.text.toString()
             var card = etCard.text.toString()
-
-            intent.putExtra("gymName", gymName)
-            intent.putExtra("name", name)
-            intent.putExtra("card", card)
 
             // 요청 생성 POST 방식
             request = object : StringRequest(
@@ -51,6 +47,20 @@ class LoginActivity : AppCompatActivity() {
                     }else{
                         Toast.makeText(this,"로그인성공!", Toast.LENGTH_SHORT).show()
                         val response1 = JSONObject(response)
+
+                        val mb_card = response1.getString("mb_card")
+
+                        if(mb_card == "admin"){
+                            intent = Intent(this, AdminActivity::class.java)
+                        }
+
+                        intent.putExtra("mb_name",response1.getString("mb_name"))
+                        intent.putExtra("mb_card",mb_card)
+                        intent.putExtra("mb_birthdate",response1.getString("mb_birthdate"))
+                        intent.putExtra("mb_gender",response1.getString("mb_gender"))
+                        intent.putExtra("gym_name",response1.getString("gym_name"))
+                        intent.putExtra("mb_type",response1.getString("mb_type"))
+                        intent.putExtra("mb_joindate",response1.getString("mb_joindate"))
 
                         startActivity(intent)
                     }
