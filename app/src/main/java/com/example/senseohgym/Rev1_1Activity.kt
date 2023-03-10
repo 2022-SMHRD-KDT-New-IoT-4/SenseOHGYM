@@ -2,6 +2,8 @@ package com.example.senseohgym
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,14 +31,14 @@ class Rev1_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_rev11)
 
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
-//        val exer_name = findViewById<TextView>(R.id.exer_name)
-//        val rev_ox = findViewById<TextView>(R.id.rev_ox)
-//        val btn_rev = findViewById<Button>(R.id.btn_rev)
 
-        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
-        var url =
-            "http://221.156.185.168:8081/Senseohgym/Member_Login.do"
+
+
+//        queue = Volley.newRequestQueue(this@Rev1_1Activity)
+
+//        var url =
+//            "http://221.156.185.168:8081/Senseohgym/Member_Login.do"
 
         val revExer = ArrayList<RevVo>()
 
@@ -54,30 +56,8 @@ class Rev1_1Activity : AppCompatActivity() {
         rcRev.adapter = adapter
         rcRev.layoutManager = LinearLayoutManager(this)
 
-//        btn_rev.setOnClickListener {
-//
-//            val exer_name = exer_name.text.toString()
-//
-//            intent.putExtra("exer_name", exer_name)
-//
-//            request = object : StringRequest(
-//                Method.POST, url,
-//                { response ->
-//                    Log.d("결과", response.toString())
-//                },
-//                { error ->
-//                    Log.d("통신오류", error.printStackTrace().toString());
-//                }
-//            ) {
-//                @Throws(AuthFailureError::class)
-//                override fun getParams(): MutableMap<String, String>? {
-//                    val params: MutableMap<String, String> = HashMap()
-//                    params["exer_name"] = exer_name
-//                    return params
-//                }
-//            }
-//        }
-//        request.setShouldCache(false)
-//        queue.add(request)
+
+
+
     }
 }

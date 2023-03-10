@@ -2,8 +2,79 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PopupActivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
 
+    android:background="@android:color/transparent">
+
+    <EditText
+        android:id="@+id/etUseTime"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:background="#FFFFFF"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="@font/cute"
+        android:gravity="center"
+        android:hint="시간입력(분)"
+        android:inputType="textPersonName"
+        android:shadowColor="#FFFFFF"
+        android:textColor="#000000"
+        android:textColorHint="#FFFFFF"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/cute"
+        android:text="분 단위로 입력해주세요"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etUseTime"
+        app:layout_constraintEnd_toEndOf="@+id/etUseTime"
+        app:layout_constraintStart_toStartOf="@+id/etUseTime" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cute"
+        android:text="사용하실 시간을"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btn_Can"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/cute"
+        android:text="취소"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/etUseTime"
+        app:layout_constraintTop_toBottomOf="@+id/etUseTime" />
+
+    <Button
+        android:id="@+id/btn_OK"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/cute"
+        android:text="확인"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Can"
+        app:layout_constraintStart_toStartOf="@+id/etUseTime"
+        app:layout_constraintTop_toBottomOf="@+id/etUseTime" />
 </androidx.constraintlayout.widget.ConstraintLayout>

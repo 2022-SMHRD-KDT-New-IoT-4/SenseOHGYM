@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         // 1번째 운동정보로 가지는 ( 차트랑 표 있는.. )
         btnMachine.setOnClickListener {
-            val intent = Intent(this, ChartActivity::class.java)
+            val intent = Intent(this, MyHealthActivity::class.java)
             startActivity(intent)
         }
 
@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
 
         // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
         btnSetting.setOnClickListener {
+            val intent = Intent(this, AdminActivity::class.java)
+            startActivity(intent)
 
         }
 
