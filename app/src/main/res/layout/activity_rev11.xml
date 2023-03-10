@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#112350"
-    tools:context=".RevActivity">
+    android:background="#112350">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -22,13 +21,14 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
         android:text="예약하기"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
@@ -38,6 +38,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="TextView"
+        android:fontFamily="@font/cute"
         android:textColor="#FFFFFF"
         android:textSize="32dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -52,6 +53,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

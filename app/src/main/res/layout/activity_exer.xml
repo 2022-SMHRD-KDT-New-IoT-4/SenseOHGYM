@@ -34,6 +34,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_sub"
+        android:fontFamily="@font/cute"
         android:text="기구 정보"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -42,6 +43,7 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:fontFamily="@font/cute"
         android:gravity="center"
         android:text="TextView"
         android:textColor="#FFFFFF"
@@ -71,6 +73,7 @@
         android:layout_height="70dp"
         android:layout_marginEnd="20dp"
         android:text="하체"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline7" />
 
@@ -80,6 +83,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:text="어깨"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
@@ -90,6 +94,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="삼두"
+        android:fontFamily="@font/cute"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -100,6 +105,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="이두"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -110,6 +116,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="가슴"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/btnEx3"
         app:layout_constraintEnd_toStartOf="@+id/guideline7" />
 
@@ -120,6 +127,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
         android:text="등"
+        android:fontFamily="@font/cute"
         app:layout_constraintBottom_toTopOf="@+id/btnEx4"
         app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
@@ -130,6 +138,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:text="코어"
+        android:fontFamily="@font/cute"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/btnEx5" />
 
@@ -140,6 +149,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="전완근"
+        android:fontFamily="@font/cute"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/btnEx6" />
 

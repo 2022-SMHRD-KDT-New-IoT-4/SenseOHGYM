@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,10 +15,12 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>) :
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var exer_name: TextView
         var rev_ox: TextView
+        var btn_rev: Button
 
         init {
             exer_name = view.findViewById(R.id.exer_name)
             rev_ox = view.findViewById(R.id.rev_ox)
+            btn_rev = view.findViewById(R.id.btn_rev)
         }
     }
 

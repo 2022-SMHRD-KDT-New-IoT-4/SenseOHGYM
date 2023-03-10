@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
         android:text="분 단위로 입력해주세요"
+        android:fontFamily="@font/cute"
         android:textColor="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -37,6 +38,7 @@
         android:layout_marginTop="30dp"
         android:background="#FFFFFF"
         android:text="확인"
+        android:fontFamily="@font/cute"
         app:layout_constraintEnd_toEndOf="@+id/etUseTime"
         app:layout_constraintStart_toStartOf="@+id/etUseTime"
         app:layout_constraintTop_toBottomOf="@+id/etUseTime" />
@@ -46,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="사용시간을"
+        android:fontFamily="@font/cute"
         android:textColor="#FFFFFF"
         android:textSize="24dp"
         android:textStyle="bold"
