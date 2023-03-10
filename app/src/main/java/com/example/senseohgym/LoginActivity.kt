@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                     }else{
                         Toast.makeText(this,"로그인성공!", Toast.LENGTH_SHORT).show()
                         val response1 = JSONObject(response)
-
+                        Log.d("###","로그인 성공 json : " + response1);
                         val mb_card = response1.getString("mb_card")
 
                         if(mb_card == "admin"){
