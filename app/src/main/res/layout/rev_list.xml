@@ -17,7 +17,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        android:textSize="32dp"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -34,12 +34,11 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textColorLink="#FFFFFF"
-        android:textSize="24dp"
+        android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/exer_name"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
 
     <Button
