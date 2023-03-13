@@ -47,8 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
         btnSetting.setOnClickListener {
-            val intent = Intent(this, AdminActivity::class.java)
-            startActivity(intent)
+
 
         }
 
