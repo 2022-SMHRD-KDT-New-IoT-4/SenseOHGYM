@@ -25,9 +25,9 @@ class AdminActivity : AppCompatActivity() {
         }
 
         MemberManage.setOnClickListener {
-            val intent = Intent(this, ManageActivity::class.java)
-            startActivity(intent)
-
+            val manageIntent = Intent(this, ManageActivity::class.java)
+            manageIntent.putExtra("gym_name", intent.getStringExtra("gym_name").toString())
+            startActivity(manageIntent)
         }
 
 
