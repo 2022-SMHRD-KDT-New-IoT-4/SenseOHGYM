@@ -14,15 +14,18 @@ class MyHealthActivity : AppCompatActivity() {
         val btnCount = findViewById<Button>(R.id.btnCount)
 
         btnHealthTime.setOnClickListener {
-            val intent = Intent(this, ChartActivity::class.java)
-
+            val intent1 = Intent(this, ChartActivity::class.java)
+            val mb_card = intent.getStringExtra("mb_card")
+            intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기
             // 보내줄 데이터...?
-            startActivity(intent)
+            startActivity(intent1)
         }
 
         btnCount.setOnClickListener {
-            val intent = Intent(this, hyesuActivity::class.java)
-            startActivity(intent)
+            val intent1 = Intent(this, hyesuActivity::class.java)
+            val mb_card = intent.getStringExtra("mb_card")
+            intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기
+            startActivity(intent1)
         }
     }
 }

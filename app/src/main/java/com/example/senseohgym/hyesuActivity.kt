@@ -2,6 +2,7 @@ package com.example.senseohgym
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.github.mikephil.charting.charts.HorizontalBarChart
@@ -15,6 +16,9 @@ class hyesuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hyesu)
+
+        val mb_card = intent.getStringExtra("mb_card") //mb_card가져오기
+        Log.d("카드번호 확인(사용횟수) : ",mb_card.toString())
 
         var index = 0
 

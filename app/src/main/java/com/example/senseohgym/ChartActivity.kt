@@ -2,9 +2,15 @@ package com.example.senseohgym
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.AuthFailureError
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
@@ -16,15 +22,49 @@ import com.github.mikephil.charting.data.BarEntry
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ChartActivity : AppCompatActivity() {
+    private lateinit var queue: RequestQueue
+    private lateinit var request : StringRequest
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart)
 
         val barChart = findViewById<BarChart>(R.id.barchart)
 
+        val mb_card = intent.getStringExtra("mb_card")
+        Log.d("카드번호 확인(ChartActivity) : ",mb_card.toString())
+
         initBarChart(barChart)
         setData(barChart)
 
+        queue  = Volley.newRequestQueue(this)
+        var url = "http://221.156.243.155:8081/Senseohgym3/UserExercise_Toss.do"
+        // 요청 생성 POST 방식
+        request = object : StringRequest(
+            Method.POST, url,
+            { response ->
+                Log.d("결과 : ", response.toString())
+                if (response.toString().equals("운동정보를 보내기 위한 값들이 충분하지 않습니다.")) {
+                    Toast.makeText(this, "재시도 바람.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "운동정보 갱신 성공!!", Toast.LENGTH_SHORT).show()
+                }
+            },
+            { error ->
+                Log.d("통신오류 : ", error.printStackTrace().toString());
+            }) {
+            @Throws(AuthFailureError::class)
+            override fun getParams(): MutableMap<String, String>? {
+                val params: MutableMap<String, String> = HashMap()
+
+                params["mb_card"] = mb_card.toString();
+
+                return params
+            }
+        }
+
+        request.setShouldCache(false)
+        queue.add(request)
     }}
 
 private fun initBarChart(barChart: BarChart) {
@@ -73,12 +113,13 @@ private fun initBarChart(barChart: BarChart) {
     leftAxis.textColor = Color.WHITE
 
 
-    // 바차트의 타이틀
+    // 바차트의 설정
     val legend: Legend = barChart.legend
     // 범례 모양 설정 (default = 정사각형)
-    legend.form = Legend.LegendForm.LINE
+    legend.form = Legend.LegendForm.NONE
+
     // 타이틀 텍스트 사이즈 설정
-    legend.textSize = 50f
+    legend.textSize = 30f
     // 타이틀 텍스트 컬러 설정
     legend.textColor = Color.WHITE
     // 범례 위치 설정
