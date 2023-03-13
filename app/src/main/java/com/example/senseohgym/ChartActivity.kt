@@ -73,12 +73,13 @@ private fun initBarChart(barChart: BarChart) {
     leftAxis.textColor = Color.WHITE
 
 
-    // 바차트의 타이틀
+    // 바차트의 설정
     val legend: Legend = barChart.legend
     // 범례 모양 설정 (default = 정사각형)
-    legend.form = Legend.LegendForm.LINE
+    legend.form = Legend.LegendForm.NONE
+
     // 타이틀 텍스트 사이즈 설정
-    legend.textSize = 50f
+    legend.textSize = 30f
     // 타이틀 텍스트 컬러 설정
     legend.textColor = Color.WHITE
     // 범례 위치 설정

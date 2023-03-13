@@ -31,15 +31,16 @@ class Rev1_1Activity : AppCompatActivity() {
 
         val revExer = ArrayList<RevVo>()
 
-        revExer.add(RevVo("운동기구1", "예약여부"))
-        revExer.add(RevVo("운동기구2", "예약여부"))
-        revExer.add(RevVo("운동기구3", "예약여부"))
-        revExer.add(RevVo("운동기구4", "예약여부"))
-        revExer.add(RevVo("운동기구5", "예약여부"))
-        revExer.add(RevVo("운동기구6", "예약여부"))
-        revExer.add(RevVo("운동기구7", "예약여부"))
-        revExer.add(RevVo("운동기구8", "예약여부"))
-        revExer.add(RevVo("운동기구9", "예약여부"))
+        revExer.add(RevVo("벤치 프레스", "예약여부"))
+        revExer.add(RevVo("덤벨 벤치 프레스", "예약여부"))
+        revExer.add(RevVo("데드리프트", "예약여부"))
+        revExer.add(RevVo("바벨 로우", "예약여부"))
+        revExer.add(RevVo("바벨 스쿼트", "예약여부"))
+        revExer.add(RevVo("런지", "예약여부"))
+        revExer.add(RevVo("오버헤드 프레스", "예약여부"))
+        revExer.add(RevVo("덤벨 숄더 프레스", "예약여부"))
+        revExer.add(RevVo("레그레이즈", "예약여부"))
+        revExer.add(RevVo("크런치", "예약여부"))
 
 
         val adapter = RevAdapter(applicationContext, revExer, mb_card.toString()) //파라미터값으로 mb_card 변수 추가
