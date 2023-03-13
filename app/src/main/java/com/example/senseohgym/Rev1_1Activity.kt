@@ -2,8 +2,6 @@ package com.example.senseohgym
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -33,8 +31,6 @@ class Rev1_1Activity : AppCompatActivity() {
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
 
 
-
-
 //        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
 //        var url =
@@ -55,7 +51,6 @@ class Rev1_1Activity : AppCompatActivity() {
         val adapter = RevAdapter(applicationContext, revExer)
         rcRev.adapter = adapter
         rcRev.layoutManager = LinearLayoutManager(this)
-
 
 
 
