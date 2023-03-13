@@ -29,6 +29,7 @@ class Rev1_1Activity : AppCompatActivity() {
         setContentView(R.layout.activity_rev11)
 
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
+        val mb_card = intent.getStringExtra("mb_card").toString()
 
 
 //        queue = Volley.newRequestQueue(this@Rev1_1Activity)
@@ -48,7 +49,7 @@ class Rev1_1Activity : AppCompatActivity() {
         revExer.add(RevVo("운동기구8", "예약여부"))
         revExer.add(RevVo("운동기구9", "예약여부"))
 
-        val adapter = RevAdapter(applicationContext, revExer)
+        val adapter = RevAdapter(applicationContext, revExer, mb_card)
         rcRev.adapter = adapter
         rcRev.layoutManager = LinearLayoutManager(this)
 
