@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.android.volley.AuthFailureError
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
@@ -30,6 +31,7 @@ class PopupActivity : AppCompatActivity() {
         window?.apply {
             setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//            setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.tp2))
 
             val etUseTime = findViewById<EditText>(R.id.etUseTime)
             val btn_OK = findViewById<Button>(R.id.btn_OK)
@@ -78,7 +80,6 @@ class PopupActivity : AppCompatActivity() {
 
                         params["etUseTime"] = etUseTime
                         params["exername"] = exer_name.toString()
-
 
                         return params
                     }

@@ -21,7 +21,7 @@ class MyHealthActivity : AppCompatActivity() {
         }
 
         btnCount.setOnClickListener {
-            val intent = Intent(this, hyesuActivity::class.java)
+            val intent = Intent(this, McActivity::class.java)
             startActivity(intent)
         }
     }
