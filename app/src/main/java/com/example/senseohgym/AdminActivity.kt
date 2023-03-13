@@ -14,36 +14,30 @@ class AdminActivity : AppCompatActivity() {
 
         val member_reg = findViewById<ImageButton>(R.id.member_reg)
         val exer_reg = findViewById<ImageButton>(R.id.exer_reg)
-        //val MemberManage = findViewById<ImageButton>(R.id.MemberManage)
+        val MemberManage = findViewById<ImageButton>(R.id.MemberManage)
 
+        // 회원등록 페이지
         member_reg.setOnClickListener {
             val intent = Intent(this, MemberRegActivity::class.java)
             startActivity(intent)
         }
 
-//        exer_reg.setOnClickListener {
-//            val intent = Intent(this, ManageActivity::class.java)
-//            startActivity(intent)
-//        }
-
-        // MemberManage 버튼에 문제가 생겨서 일단 해보는 코드
+        // 기구사용량 확인 페이지
         exer_reg.setOnClickListener {
+            val intent = Intent(this, ManageActivity::class.java)
+            val manageIntent = Intent(this, ManageActivity::class.java)
+            manageIntent.putExtra("gym_name",intent.getStringExtra("gym_name"))
+            startActivity(intent)
+        }
+
+        // 회원관리 페이지
+        MemberManage.setOnClickListener {
             val manageIntent = Intent(this, ManageActivity::class.java)
             manageIntent.putExtra("gym_name",intent.getStringExtra("gym_name"))
 
             startActivity(manageIntent)
+
         }
-
-
-
-        // 회원관리 페이지
-//        MemberManage.setOnClickListener {
-//            val manageIntent = Intent(this, ManageActivity::class.java)
-//            manageIntent.putExtra("gym_name",intent.getStringExtra("gym_name"))
-//
-//            startActivity(manageIntent)
-//
-//        }
 
 
     }
