@@ -7,31 +7,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.AuthFailureError
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import org.w3c.dom.Text
+import kotlin.math.log
 
-class RevAdapter(var context: Context, var data: ArrayList<RevVo>) :
+class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card : String) :
     RecyclerView.Adapter<RevAdapter.ViewHolder>() {
 
 //    private lateinit var queue: RequestQueue
 //    private lateinit var request: StringRequest
-//
-    private lateinit var exer_name: TextView
-    private lateinit var rev_ox: TextView
 
+    private lateinit var exer_name: TextView
+    private lateinit var rev_ox: TextView // 예약여부
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var exer_name: TextView
-        var rev_ox: TextView
+        var rev_ox: TextView // 예약여부
         var btn_rev: Button
+
 
         init {
             exer_name = view.findViewById(R.id.exer_name)
@@ -54,12 +48,18 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>) :
         holder.exer_name.text = data[position].exer
         holder.rev_ox.text = data[position].rev
 
+
+
         holder.btn_rev.setOnClickListener {
             // 누르는데까지 문제없는가...?
 //            Toast.makeText(context, "토스트 성공~ 성공~", Toast.LENGTH_SHORT).show()
 
+
             var intent = Intent(context, PopupActivity::class.java)
+            intent.putExtra("mb_card",mb_card)
+            Log.d("mb카드 번호 받음!! : ",mb_card.toString())
             intent.putExtra("exername", data.get(position).exer)
+            Log.d("기구명 확인!! : : ",data.get(position).exer)
 
 
             // 액티비티처럼 화면이 돌아갈수 있게 해주는 코드

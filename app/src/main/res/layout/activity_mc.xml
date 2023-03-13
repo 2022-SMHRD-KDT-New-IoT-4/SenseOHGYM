@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:background="#112350"
     android:backgroundTint="#112350"
-    tools:context=".hyesuActivity">
+    tools:context=".McActivity">
 
     <com.github.mikephil.charting.charts.HorizontalBarChart
-        android:id="@+id/hyesuChart"
+        android:id="@+id/mcChart"
         android:layout_width="350dp"
         android:layout_height="400dp"
         android:layout_gravity="center"
@@ -26,7 +26,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:fontFamily="@font/cute"
-        app:layout_constraintBottom_toTopOf="@+id/hyesuChart"
+        app:layout_constraintBottom_toTopOf="@+id/mcChart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
