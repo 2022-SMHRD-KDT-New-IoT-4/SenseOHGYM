@@ -3,94 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/mgName"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="30dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mgCard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="7dp">
 
-    <TextView
-        android:id="@+id/mgCard"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mgBirth"
-        app:layout_constraintStart_toEndOf="@+id/mgName"
-        app:layout_constraintTop_toTopOf="parent" />
+        <CheckBox
+            android:id="@+id/mgCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/mgBirth"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mgAge"
-        app:layout_constraintStart_toEndOf="@+id/mgCard"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/mgName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/mgAge"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mgJoinDate"
-        app:layout_constraintStart_toEndOf="@+id/mgBirth"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/mgCard"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/mgJoinDate"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:gravity="center"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mgAge"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/mgBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
 
-    <CheckBox
-        android:id="@+id/mgCheck"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:shadowColor="#FFFFFF"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mgName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:useMaterialThemeColors="true" />
+        <TextView
+            android:id="@+id/mgAge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/mgJoinDate"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#FFFFFF" />
+    </TableRow>
 </androidx.constraintlayout.widget.ConstraintLayout>

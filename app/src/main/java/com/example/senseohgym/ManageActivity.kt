@@ -1,5 +1,6 @@
 package com.example.senseohgym
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,7 +25,8 @@ class ManageActivity : AppCompatActivity() {
         manageRc.layoutManager = LinearLayoutManager(this)
 
         btnManage.setOnClickListener {
-
+            val intent = Intent(this, ManageUpdateActivity::class.java)
+            startActivity(intent)
         }
 
 

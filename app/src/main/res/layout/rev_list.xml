@@ -45,6 +45,7 @@
         android:id="@+id/btn_rev"
         android:layout_width="100dp"
         android:layout_height="60dp"
+        android:backgroundTint="#1ABC9C"
         android:fontFamily="@font/cute"
         android:text="예약하기"
         android:textAlignment="center"
