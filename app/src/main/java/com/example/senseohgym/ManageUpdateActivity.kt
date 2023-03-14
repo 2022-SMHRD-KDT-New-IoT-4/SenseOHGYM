@@ -1,21 +1,21 @@
 package com.example.senseohgym
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 
 class ManageUpdateActivity : AppCompatActivity() {
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage_update)
 
-        val updateName = findViewById<TextView>(R.id.updateName)
-        val updateCard = findViewById<TextView>(R.id.updateCard)
-        val updateBirth = findViewById<TextView>(R.id.updateBirth)
-        val updateHealth = findViewById<TextView>(R.id.updateHealth)
+
+        val updateName = findViewById<EditText>(R.id.updateName)
+        val updateCard = findViewById<EditText>(R.id.updateCard)
+        val updateBirth = findViewById<EditText>(R.id.updateBirth)
+        val updateHealth = findViewById<EditText>(R.id.updateHealth)
         val rg2 = findViewById<RadioGroup>(R.id.rg2)
         val chMan2 = findViewById<RadioButton>(R.id.chMan2)
         val chWoman2 = findViewById<RadioButton>(R.id.chWoman2)
