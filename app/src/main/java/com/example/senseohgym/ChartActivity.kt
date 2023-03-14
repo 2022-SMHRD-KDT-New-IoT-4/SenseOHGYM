@@ -13,8 +13,10 @@ import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+// 통신하는 코드 요청 (Volley 부분)
 class ChartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +60,24 @@ private fun initBarChart(barChart: BarChart) {
     // 격자선 설정 (default = true)
     xAxis.setDrawGridLines(false)
 
+    var index = 0
+    xAxis.valueFormatter = object : ValueFormatter() {
+        override fun getFormattedValue(value: Float): String {
+            index = value.toInt()
+            return  when (index){
+                1 -> "3/3"
+                2 -> "3/4"
+                3 -> "3/5"
+                4 -> "3/6"
+                5 -> "3/7"
+                6 -> "3/8"
+                7 -> "3/9"
+                else -> throw IndexOutOfBoundsException("index out")
+
+            }
+        }
+    }
+
     val leftAxis: YAxis = barChart.axisLeft
     // 좌측 선 설정 (default = true)
     leftAxis.setDrawAxisLine(false)
@@ -98,10 +118,10 @@ private fun setData(barChart: BarChart) {
     barChart.setScaleEnabled(false)
 
     val valueList = ArrayList<BarEntry>()
-    val title = "3/3~3/10"
+    val title = "3/3~3/9"
 
     // 데이터 30분/60분 단위 /일주일 단위
-    for (i in 1 until 7) {
+    for (i in 1 until 8) {
         valueList.add(BarEntry(i.toFloat(), i * 10f))
     }
 
@@ -109,7 +129,8 @@ private fun setData(barChart: BarChart) {
     // 바 색상 설정 (ColorTemplate.LIBERTY_COLORS)
     barDataSet.setColors(
         Color.rgb(231, 76, 60), Color.rgb(26, 188, 156), Color.rgb(241, 196, 15),
-        Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),Color.rgb(234, 156, 18))
+        Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),Color.rgb(234, 156, 18),
+    Color.rgb(75, 56,234))
 
     val data = BarData(barDataSet)
     barChart.data = data

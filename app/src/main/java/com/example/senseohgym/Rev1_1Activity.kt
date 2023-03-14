@@ -42,6 +42,15 @@ class Rev1_1Activity : AppCompatActivity() {
         revExer.add(RevVo("브이 스쿼트", "예약여부"))
         revExer.add(RevVo("레그 익스텐션", "예약여부"))
         revExer.add(RevVo("싸이클", "예약여부"))
+        revExer.add(RevVo("덤벨 벤치 프레스", "예약여부"))
+        revExer.add(RevVo("데드리프트", "예약여부"))
+        revExer.add(RevVo("바벨 로우", "예약여부"))
+        revExer.add(RevVo("바벨 스쿼트", "예약여부"))
+        revExer.add(RevVo("런지", "예약여부"))
+        revExer.add(RevVo("오버헤드 프레스", "예약여부"))
+        revExer.add(RevVo("덤벨 숄더 프레스", "예약여부"))
+        revExer.add(RevVo("레그레이즈", "예약여부"))
+        revExer.add(RevVo("크런치", "예약여부"))
 
         val adapter = RevAdapter(applicationContext, revExer, mb_card)
         rcRev.adapter = adapter

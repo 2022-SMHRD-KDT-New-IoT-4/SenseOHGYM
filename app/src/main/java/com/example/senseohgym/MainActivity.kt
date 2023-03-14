@@ -15,9 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-
         val btnMachine = findViewById<ImageButton>(R.id.btnMachine)
         val btnRev = findViewById<ImageButton>(R.id.btnRev)
         val btnExerInfo = findViewById<ImageButton>(R.id.btnExerInfo)
@@ -51,10 +48,7 @@ class MainActivity : AppCompatActivity() {
 
         // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
         btnSetting.setOnClickListener {
-
-
         }
-
 
     }
 }
