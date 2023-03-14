@@ -1,19 +1,26 @@
 package com.example.senseohgym
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageView
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import com.example.senseohgym.manageAdapter as manageAdapter1
 
 class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
-    RecyclerView.Adapter<manageAdapter.ViewHolder>() {
-    
-    lateinit var mgCheckBox: CheckBox
+    RecyclerView.Adapter<manageAdapter1.ViewHolder>() {
+    var selectPos = -1
+
+//    lateinit var btnManage : Button
+//    lateinit var btnDelete : Button
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mgName: TextView
@@ -21,7 +28,10 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
         var mgBirth: TextView
         var mgAge: TextView
         var mgJoinDate: TextView
-        var mgCheck: CheckBox
+        var LL: LinearLayout
+//        var btnManage : Button
+//        var btnDelete : Button
+
 
         init {
             mgName = view.findViewById(R.id.mgName)
@@ -29,7 +39,10 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
             mgBirth = view.findViewById(R.id.mgBirth)
             mgAge = view.findViewById(R.id.mgAge)
             mgJoinDate = view.findViewById(R.id.mgJoinDate)
-            mgCheck = view.findViewById(R.id.mgCheck)
+            LL = view.findViewById(R.id.LL)
+//            btnManage = view.findViewById(R.id.btnManage)
+//            btnDelete = view.findViewById(R.id.btnDelete)
+
         }
     }
 
@@ -49,25 +62,32 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
         holder.mgBirth.text = data[position].birth
         holder.mgAge.text = data[position].age
         holder.mgJoinDate.text = data[position].joindate
-        
+//        holder.btnManage
+//        holder.btnDelete
 
+        if (selectPos == position) {
+            holder.LL.setBackgroundColor(Color.parseColor("#aaaaaa"))
 
+            val intent = Intent(context, ManageUpdateActivity::class.java)
+
+            intent.putExtra("name", holder.mgName.text.toString())
+            intent.putExtra("card", holder.mgCard.text.toString())
+            intent.putExtra("birth", holder.mgBirth.text.toString())
+            intent.putExtra("age", holder.mgAge.text.toString())
+            intent.putExtra("joindate", holder.mgJoinDate.text.toString())
+            intent.putExtra("gym_name", data[position].healthname)
+
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+        } else {
+            holder.LL.setBackgroundColor(Color.parseColor("#00ff0000"))
+        }
+        holder.LL.setOnClickListener {
+            var beforePos = selectPos
+            selectPos = position
+
+            notifyItemChanged(beforePos)
+            notifyItemChanged(selectPos)
+        }
     }
 }
-
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        var inflater = LayoutInflater.from(context)
-//        var view = inflater.inflate(R.layout.ex1_list, parent, false)
-//        return ViewHolder(view)
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return data.size
-//    }
-//
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.tvName1.text = data[position].name
-//        holder.tvIntro1.text = data[position].intro
-//        holder.exImg1.setImageResource(data[position].img)
-//    }
-//}

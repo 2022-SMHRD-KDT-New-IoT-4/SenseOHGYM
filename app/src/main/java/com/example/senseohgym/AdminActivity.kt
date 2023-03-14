@@ -17,11 +17,14 @@ class AdminActivity : AppCompatActivity() {
         val MemberManage = findViewById<ImageButton>(R.id.MemberManage)
 
         member_reg.setOnClickListener {
-
+            val intent = Intent(this, MemberRegActivity::class.java)
+            startActivity(intent)
         }
 
         exer_reg.setOnClickListener {
-
+            val exIntent = Intent(this, MachineDataActivity::class.java)
+            exIntent.putExtra("gym_name",intent.getStringExtra("gym_name").toString())
+            startActivity(exIntent)
         }
 
         MemberManage.setOnClickListener {

@@ -18,9 +18,12 @@ import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.json.JSONArray
 import org.json.JSONObject
 
+// 통신하는 코드 요청 (Volley 부분)
 class ChartActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
@@ -50,13 +53,18 @@ class ChartActivity : AppCompatActivity() {
         request = object : StringRequest(
             Method.POST, url,
             {response ->
-                Log.d("확인 : ", response.toString())
+                Log.d("확인 : ", response.toString()) //서버에서 넘어온 값 확인
                 if(response.toString() == "운동정보를 보내기 위한 값들이 충분하지 않습니다."){
                     Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this,"운동정보받기 성공!", Toast.LENGTH_SHORT).show()
-                    val response1 = JSONObject(response)
-
+                    //val response1 = JSONObject(response) --> Object형태여서 Array로바꿔줌
+                    val response1 = JSONArray(response)
+                    // parsing 예시. 필요하면 사용하려고 적어뒀음
+                    // 0번째 값을 추출하기 위한 예시
+                    // val jsonObject = response1.getJSONObject(0)
+                    // val usetime = jsonObject.getString("rs_usetime")
+                    // Log.d("0번째 사용시간 : ", usetime.toString())
                 }
 
             },
@@ -68,6 +76,9 @@ class ChartActivity : AppCompatActivity() {
                 val params : MutableMap<String, String> = HashMap()
 
                 params["mb_card"] = mb_card.toString()
+                // btn_type 선언해주기. 왜? 서버쪽에서 ChatActivity와 McActivity 구별을 위해
+                // ChatActivity는 0으로, McActivity는 1로 구별
+                params["btn_type"] = "0";
 
 
                 return params
@@ -119,6 +130,24 @@ private fun initBarChart(barChart: BarChart) {
     // 격자선 설정 (default = true)
     xAxis.setDrawGridLines(false)
 
+    var index = 0
+    xAxis.valueFormatter = object : ValueFormatter() {
+        override fun getFormattedValue(value: Float): String {
+            index = value.toInt()
+            return  when (index){
+                1 -> "3/3"
+                2 -> "3/4"
+                3 -> "3/5"
+                4 -> "3/6"
+                5 -> "3/7"
+                6 -> "3/8"
+                7 -> "3/9"
+                else -> throw IndexOutOfBoundsException("index out")
+
+            }
+        }
+    }
+
     val leftAxis: YAxis = barChart.axisLeft
     // 좌측 선 설정 (default = true)
     leftAxis.setDrawAxisLine(false)
@@ -159,10 +188,10 @@ private fun setData(barChart: BarChart) {
     barChart.setScaleEnabled(false)
 
     val valueList = ArrayList<BarEntry>()
-    val title = "3/3~3/10"
+    val title = "3/3~3/9"
 
     // 데이터 30분/60분 단위 /일주일 단위
-    for (i in 1 until 7) {
+    for (i in 1 until 8) {
         valueList.add(BarEntry(i.toFloat(), i * 10f))
     }
 
@@ -170,7 +199,8 @@ private fun setData(barChart: BarChart) {
     // 바 색상 설정 (ColorTemplate.LIBERTY_COLORS)
     barDataSet.setColors(
         Color.rgb(231, 76, 60), Color.rgb(26, 188, 156), Color.rgb(241, 196, 15),
-        Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),Color.rgb(234, 156, 18))
+        Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),Color.rgb(234, 156, 18),
+    Color.rgb(75, 56,234))
 
     val data = BarData(barDataSet)
     barChart.data = data
