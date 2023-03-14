@@ -33,15 +33,15 @@ class Rev1_1Activity : AppCompatActivity() {
 
         val revExer = ArrayList<RevVo>()
 
-        revExer.add(RevVo("운동기구1", "예약여부"))
-        revExer.add(RevVo("운동기구2", "예약여부"))
-        revExer.add(RevVo("운동기구3", "예약여부"))
-        revExer.add(RevVo("운동기구4", "예약여부"))
-        revExer.add(RevVo("운동기구5", "예약여부"))
-        revExer.add(RevVo("운동기구6", "예약여부"))
-        revExer.add(RevVo("운동기구7", "예약여부"))
-        revExer.add(RevVo("운동기구8", "예약여부"))
-        revExer.add(RevVo("운동기구9", "예약여부"))
+        revExer.add(RevVo("렛 풀다운", "예약여부"))
+        revExer.add(RevVo("벤치 프레스", "예약여부"))
+        revExer.add(RevVo("딥스", "예약여부"))
+        revExer.add(RevVo("암 풀다운", "예약여부"))
+        revExer.add(RevVo("크런치", "예약여부"))
+        revExer.add(RevVo("트레드밀", "예약여부"))
+        revExer.add(RevVo("브이 스쿼트", "예약여부"))
+        revExer.add(RevVo("레그 익스텐션", "예약여부"))
+        revExer.add(RevVo("싸이클", "예약여부"))
 
         val adapter = RevAdapter(applicationContext, revExer, mb_card)
         rcRev.adapter = adapter

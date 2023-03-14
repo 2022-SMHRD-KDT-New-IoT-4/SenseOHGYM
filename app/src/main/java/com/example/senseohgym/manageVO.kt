@@ -6,4 +6,5 @@ data class manageVO(
     val birth : String ="",
     val age : String ="",
     val joindate : String ="",
+    val healthname : String =""
 )
