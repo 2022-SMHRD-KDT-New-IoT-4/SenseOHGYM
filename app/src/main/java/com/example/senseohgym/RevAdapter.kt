@@ -8,9 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.math.log
 
 class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card : String) :
     RecyclerView.Adapter<RevAdapter.ViewHolder>() {

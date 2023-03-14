@@ -16,7 +16,7 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import java.text.NumberFormat
 
-
+// 기구 데이터 (관리자 페이지)
 class MachineDataActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue

@@ -2,6 +2,8 @@ package com.example.senseohgym
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.Description
@@ -11,12 +13,9 @@ import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.formatter.ValueFormatter
-
-// 운동 시간 (30분 단위)
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ChartActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart)
@@ -59,29 +58,12 @@ private fun initBarChart(barChart: BarChart) {
     // 격자선 설정 (default = true)
     xAxis.setDrawGridLines(false)
 
-    // bar 안에 표시되는 값의 위치와 글꼴 설정
-    var index = 0
-    xAxis.valueFormatter = object : ValueFormatter() {
-        override fun getFormattedValue(value: Float): String {
-            index = value.toInt()
-            return  when (index){
-                1 -> "벤치 프레스"
-                2 -> "런닝머신"
-                3 -> "싸이클"
-                4 -> "덤벨"
-                5 -> "바벨 로우"
-                6 -> "데드리프트"
-                else -> throw IndexOutOfBoundsException("index out")
-
-            }
-        }
-    }
-
     val leftAxis: YAxis = barChart.axisLeft
     // 좌측 선 설정 (default = true)
     leftAxis.setDrawAxisLine(false)
     // 좌측 텍스트 컬러 설정
     leftAxis.textColor = Color.WHITE
+
 
     val rightAxis: YAxis = barChart.axisRight
     // 우측 선 설정 (default = true)
@@ -90,18 +72,19 @@ private fun initBarChart(barChart: BarChart) {
     rightAxis.textColor = Color.TRANSPARENT
     leftAxis.textColor = Color.WHITE
 
+
     // 바차트의 설정
     val legend: Legend = barChart.legend
     // 범례 모양 설정 (default = 정사각형)
     legend.form = Legend.LegendForm.NONE
 
     // 타이틀 텍스트 사이즈 설정
-    legend.textSize = 20f
+    legend.textSize = 30f
     // 타이틀 텍스트 컬러 설정
     legend.textColor = Color.WHITE
     // 범례 위치 설정
     legend.verticalAlignment = Legend.LegendVerticalAlignment.TOP
-    legend.horizontalAlignment = Legend.LegendHorizontalAlignment.RIGHT
+    legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
 
 
     // 밑에 쪼그마한 이상한 거(범례) 없애기
@@ -119,16 +102,13 @@ private fun setData(barChart: BarChart) {
 
     // 데이터 30분/60분 단위 /일주일 단위
     for (i in 1 until 7) {
-        val index = i.toFloat()
         valueList.add(BarEntry(i.toFloat(), i * 10f))
     }
 
-//    valueList.add(BarEntry("1", "3"))
-
     val barDataSet = BarDataSet(valueList, title)
-//     바 색상 설정 (ColorTemplate.LIBERTY_COLORS)
+    // 바 색상 설정 (ColorTemplate.LIBERTY_COLORS)
     barDataSet.setColors(
-        Color.rgb(231, 76, 60), Color.rgb(231, 76, 60), Color.rgb(241, 196, 15),
+        Color.rgb(231, 76, 60), Color.rgb(26, 188, 156), Color.rgb(241, 196, 15),
         Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),Color.rgb(234, 156, 18))
 
     val data = BarData(barDataSet)
@@ -136,5 +116,6 @@ private fun setData(barChart: BarChart) {
 
     barChart.setNoDataText("No chart to display")
     barChart.invalidate()
+
 
 }
