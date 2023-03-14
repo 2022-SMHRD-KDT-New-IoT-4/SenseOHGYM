@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/mgName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="12"
@@ -19,7 +19,7 @@
     <TextView
         android:id="@+id/mgCard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="12"
@@ -29,7 +29,7 @@
     <TextView
         android:id="@+id/mgBirth"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="12"
@@ -39,7 +39,7 @@
     <TextView
         android:id="@+id/mgAge"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="12"
@@ -49,7 +49,7 @@
     <TextView
         android:id="@+id/mgJoinDate"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="30dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="12"
