@@ -12,6 +12,8 @@ import org.w3c.dom.Text
 
 class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
     RecyclerView.Adapter<manageAdapter.ViewHolder>() {
+    
+    lateinit var mgCheckBox: CheckBox
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mgName: TextView
@@ -47,6 +49,8 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
         holder.mgBirth.text = data[position].birth
         holder.mgAge.text = data[position].age
         holder.mgJoinDate.text = data[position].joindate
+        
+
 
     }
 }

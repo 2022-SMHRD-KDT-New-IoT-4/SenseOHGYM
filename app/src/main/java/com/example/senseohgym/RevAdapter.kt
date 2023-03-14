@@ -52,7 +52,7 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card :
 
         holder.btn_rev.setOnClickListener {
             // 누르는데까지 문제없는가...?
-            Toast.makeText(context, "토스트 성공~ 성공~", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, "토스트 성공~ 성공~", Toast.LENGTH_SHORT).show()
 
 
             var intent = Intent(context, PopupActivity::class.java)

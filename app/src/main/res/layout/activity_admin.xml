@@ -48,7 +48,7 @@
         android:id="@+id/member_reg"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:background="#112350"
+        android:background="#3498DB"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
@@ -72,21 +72,22 @@
         android:id="@+id/imageView6"
         android:layout_width="0dp"
         android:layout_height="200dp"
+        android:background="#7D4FB9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:srcCompat="@drawable/call" />
+        app:srcCompat="@drawable/adminhelp" />
 
     <ImageButton
         android:id="@+id/MemberManage"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:backgroundTint="#112350"
+        android:background="#F39C12"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:srcCompat="@drawable/community" />
+        app:srcCompat="@drawable/memberupdatetitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

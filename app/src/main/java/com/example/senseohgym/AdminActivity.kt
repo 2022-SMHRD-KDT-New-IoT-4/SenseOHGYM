@@ -17,8 +17,7 @@ class AdminActivity : AppCompatActivity() {
         val MemberManage = findViewById<ImageButton>(R.id.MemberManage)
 
         member_reg.setOnClickListener {
-            val intent = Intent(this, MemberRegActivity::class.java)
-            startActivity(intent)
+
         }
 
         exer_reg.setOnClickListener {

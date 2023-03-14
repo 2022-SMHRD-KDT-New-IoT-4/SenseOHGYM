@@ -31,50 +31,44 @@ class PopupActivity : AppCompatActivity() {
             setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
             setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-            queue = Volley.newRequestQueue(this@PopupActivity)
             val etUseTime = findViewById<EditText>(R.id.etUseTime)
-            val btn_OK = findViewById<Button>(R.id.btn_OK) // 팝업창 확인 버튼(사용할 시간 입력 팝업창)
-            val btn_Can = findViewById<Button>(R.id.btn_Can) //팝업창 취소 버튼(사용할 시간 입력 팝업창)
+            val btn_OK = findViewById<Button>(R.id.btn_OK)
+            val btn_Can = findViewById<Button>(R.id.btn_Can)
 
-            val exer_name = intent.getStringExtra("exername") // 사용기구명
-            val mb_card = intent.getStringExtra("mb_card") // 카드번호
+
+            val exer_name = intent.getStringExtra("exername")
+
+
+            queue = Volley.newRequestQueue(this@PopupActivity)
 
             // 예약관련파일 url 값
-            var url = "http://221.156.243.155:8081/Senseohgym3/Reservation_Join.do"
+            var url =
+                "http://221.156.185.168:8081/Senseohgym/.do"
 
 
             btn_OK.setOnClickListener {
                 Toast.makeText(this@PopupActivity, "돼니??", Toast.LENGTH_SHORT).show()
 
-
-                val intent = Intent(this@PopupActivity, Rev1_1Activity::class.java)
+                var intent = Intent(this@PopupActivity, Rev1_1Activity::class.java)
 
                 var etUseTime = etUseTime.text.toString()
-
-
                 // 시간 입력 잘되나 확인해보는코드
                 Log.d("시간확인", "사용할 시간: $etUseTime")
                 // 기구정보 잘 넘어오나 확인
                 Log.d("기구확인", "사용할 기구: $exer_name")
-                // 카드번호 잘 넘어오나 확인
-                Log.d("카드번호 확인_PopupActivity", mb_card.toString())
 
-                // 요청 생성 POST방식
+
+                intent.putExtra("etUseTime", etUseTime)
+                intent.putExtra("exername", exer_name)
+
                 request = object : StringRequest(Method.POST, url,
                     { response ->
-                        Log.d("결과", response.toString())
-                        if(response.toString() == "예약을 하기 위한 값들이 충분하지 않습니다.") {
-                            Toast.makeText(context, "예약 조건이 충분하지 않습니다. 재시도 바람", Toast.LENGTH_SHORT).show()
+                        Log.d("성공했다면", response.toString())
 
-                        }else{
-                            Toast.makeText(context, "예약성공!", Toast.LENGTH_SHORT).show()
-
-                            val response1 = JSONObject(response)
-                            startActivity(intent)
-                        }
+                        val response1 = JSONObject(response)
                     },
                     { error ->
-                        Log.d("통신오류", error.printStackTrace().toString());
+                        Log.d("실패했다면", error.printStackTrace().toString())
                     }
 
                 ) {
@@ -84,7 +78,7 @@ class PopupActivity : AppCompatActivity() {
 
                         params["etUseTime"] = etUseTime
                         params["exername"] = exer_name.toString()
-                        params["mb_card"] = mb_card.toString()
+
 
                         return params
                     }

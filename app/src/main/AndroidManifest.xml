@@ -15,24 +15,34 @@
         android:theme="@style/Theme.SenseOhGym"
         tools:targetApi="31">
         <activity
-            android:name=".MachineDataActivity"
+            android:name=".McActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageActivity"
             android:exported="true">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".MachineDataActivity"
+            android:exported="true" />
         <activity
             android:name=".MemberRegActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MyHealthActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".hyesuActivity"
             android:exported="true" />
+
         <activity
             android:name=".ChartActivity"
-            android:exported="true" />
+            android:exported="true">
+        </activity>
+
         <activity
             android:name=".PopupActivity"
             android:exported="false"
@@ -93,6 +103,8 @@
             android:name=".MainActivity"
             android:exported="true" />
 
+
+
         <activity android:name=".AdminActivity"
             android:exported="true">
 
@@ -102,6 +114,6 @@
 
 
 
-    </application>
 
+    </application>
 </manifest>
