@@ -5,6 +5,7 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
@@ -16,7 +17,7 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import java.text.NumberFormat
 
-
+// 기구 데이터 (관리자 페이지)
 class MachineDataActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
@@ -26,6 +27,8 @@ class MachineDataActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_machine_data)
 
+        val gym_name = intent.getStringExtra("gym_name").toString()
+
         val pieChart: PieChart = findViewById(R.id.piechart)
         pieChart.setExtraOffsets(40f, 0f, 40f, 0f)
 
@@ -33,7 +36,7 @@ class MachineDataActivity : AppCompatActivity() {
 
         val url = "http://211.107.188.212:8081/Senseohgym/Member_Login.do"
 
-        request = StringRequest(
+        request = object : StringRequest(
             Request.Method.POST, url,
             {response ->
 
@@ -41,7 +44,16 @@ class MachineDataActivity : AppCompatActivity() {
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString())
             }
-        )
+        ){
+            @Throws(AuthFailureError::class)
+            override fun getParams(): MutableMap<String, String>? {
+                val params : MutableMap<String, String> = HashMap()
+
+                params["gym_name"] = gym_name
+
+                return params
+            }
+        }
 
         class CustomPieEntry(
             x: Float,

@@ -1,18 +1,12 @@
 package com.example.senseohgym
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.volley.AuthFailureError
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 
 // 실시간 기구 사용여부에 .. 들어오면 운동 기구 목록이 보여지는 화면입니다
 // 여기서 바로 기구 예약하기를 사용할 수 있어야함..
