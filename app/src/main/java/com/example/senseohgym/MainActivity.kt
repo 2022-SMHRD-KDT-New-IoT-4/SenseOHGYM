@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         // 1번째 운동정보로 가지는 ( 차트랑 표 있는.. )
         btnMachine.setOnClickListener {
-
             val intent1 = Intent(this, MyHealthActivity::class.java)
             val mb_card = intent.getStringExtra("mb_card")
             intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기
@@ -51,8 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
         btnSetting.setOnClickListener {
-            val intent = Intent(this, AdminActivity::class.java)
-            startActivity(intent)
+
 
         }
 
