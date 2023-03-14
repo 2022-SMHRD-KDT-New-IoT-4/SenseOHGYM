@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         // 1번째 운동정보로 가지는 ( 차트랑 표 있는.. )
         btnMachine.setOnClickListener {
-
             val intent1 = Intent(this, MyHealthActivity::class.java)
             val mb_card = intent.getStringExtra("mb_card")
             intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기

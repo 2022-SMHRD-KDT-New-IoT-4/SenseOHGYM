@@ -37,6 +37,7 @@
             android:exported="true">
 
         </activity>
+
         <activity
             android:name=".PopupActivity"
             android:exported="false"
