@@ -20,14 +20,19 @@ class AdminActivity : AppCompatActivity() {
             val intent = Intent(this, MemberRegActivity::class.java)
             startActivity(intent)
         }
+
         exer_reg.setOnClickListener {
-            val intent = Intent(this, MachineDataActivity::class.java)
-            startActivity(intent)
+            val exIntent = Intent(this, MachineDataActivity::class.java)
+            exIntent.putExtra("gym_name",intent.getStringExtra("gym_name").toString())
+            startActivity(exIntent)
         }
+
         MemberManage.setOnClickListener {
             val manageIntent = Intent(this, ManageActivity::class.java)
             manageIntent.putExtra("gym_name", intent.getStringExtra("gym_name").toString())
             startActivity(manageIntent)
         }
+
+
     }
 }
