@@ -21,7 +21,9 @@ class AdminActivity : AppCompatActivity() {
         }
 
         exer_reg.setOnClickListener {
-
+            val exIntent = Intent(this, MachineDataActivity::class.java)
+            exIntent.putExtra("gym_name",intent.getStringExtra("gym_name").toString())
+            startActivity(exIntent)
         }
 
         MemberManage.setOnClickListener {

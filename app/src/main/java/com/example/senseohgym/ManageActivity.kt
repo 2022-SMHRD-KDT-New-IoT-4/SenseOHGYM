@@ -26,7 +26,7 @@ class ManageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage)
 
-        val btnManage = findViewById<Button>(R.id.btnManage)
+
         val manageRc = findViewById<RecyclerView>(R.id.manageRc)
         val tvManageTitle = findViewById<TextView>(R.id.tvManageTitle)
 
@@ -49,8 +49,14 @@ class ManageActivity : AppCompatActivity() {
 
                 for(i in 0 until result.length()){
                     val manage = result.getJSONObject(i)
-                    manage_list.add(manageVO(manage.getString("mb_name",),manage.getString("mb_card"),
-                        manage.getString("mb_birthdate"),manage.getString("mb_gender"), manage.getString("mb_joindate")))
+                    manage_list.add(manageVO(
+                        manage.getString("mb_name"),
+                        manage.getString("mb_card"),
+                        manage.getString("mb_birthdate"),
+                        manage.getString("mb_gender"),
+                        manage.getString("mb_joindate"),
+                        manage.getString("gym_name")
+                    ))
                 }
 
                 //manage_list.add(manageVO("김깅지","120","11.11.11","남","23.03.10"))
@@ -59,10 +65,12 @@ class ManageActivity : AppCompatActivity() {
                 manageRc.adapter = adapter
                 manageRc.layoutManager = LinearLayoutManager(this)
 
-                btnManage.setOnClickListener {
-                    val intent = Intent(this, ManageUpdateActivity::class.java)
-                    startActivity(intent)
-                }
+//                btnManage.setOnClickListener {
+//                    val intent = Intent(this, ManageUpdateActivity::class.java)
+//
+//
+//                    startActivity(intent)
+//                }
             },
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString())
@@ -79,6 +87,8 @@ class ManageActivity : AppCompatActivity() {
 
         request.setShouldCache(false)
         queue.add(request)
+
+
 
 
 //        val manage_list = ArrayList<manageVO>()

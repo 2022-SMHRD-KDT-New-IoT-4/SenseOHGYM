@@ -52,17 +52,6 @@
         app:layout_constraintStart_toStartOf="@+id/tvManageTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvManageTitle" />
 
-    <Button
-        android:id="@+id/btnManage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#F39C12"
-        android:text="관리하기"
-        app:layout_constraintBottom_toBottomOf="@+id/manageRc"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="120dp"
@@ -80,12 +69,6 @@
         app:layout_constraintBottom_toTopOf="@+id/manageRc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" >
-
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:buttonTint="#FFFFFF" />
 
         <TextView
             android:id="@+id/textView10"
@@ -133,5 +116,15 @@
             android:textColor="#FFFFFF" />
 
     </TableRow>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#F39C12"
+        android:text="변경하고자 하는 회원을 클릭시\n수정 페이지로 이동합니다."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
