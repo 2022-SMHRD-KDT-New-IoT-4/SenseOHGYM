@@ -25,8 +25,6 @@ class Rev1_1Activity : AppCompatActivity() {
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
         val mb_card = intent.getStringExtra("mb_card").toString()
 
-        val mb_card = intent.getStringExtra("mb_card").toString()
-
 
 //        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
