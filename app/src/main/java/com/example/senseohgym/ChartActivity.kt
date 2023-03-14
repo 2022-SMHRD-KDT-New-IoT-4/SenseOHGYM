@@ -2,9 +2,14 @@ package com.example.senseohgym
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.AuthFailureError
+import com.android.volley.RequestQueue
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
@@ -15,17 +20,58 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.json.JSONObject
 
 // 통신하는 코드 요청 (Volley 부분)
 class ChartActivity : AppCompatActivity() {
+
+    private lateinit var queue: RequestQueue
+    private lateinit var request : StringRequest
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chart)
+
+        queue = Volley.newRequestQueue(this)
+
+        // mb_card값 가져와서 Log로 값 잘나오는지 확인
+        val mb_card = intent.getStringExtra("mb_card")
+        Log.d("여기까지 오류 이상없음 : ", mb_card.toString())
+        Log.d("카드번호 확인(ChartActivity) : ", mb_card.toString())
 
         val barChart = findViewById<BarChart>(R.id.barchart)
 
         initBarChart(barChart)
         setData(barChart)
+
+        // 장제원 url
+        var url = "http://221.156.243.155:8081/Senseohgym/UserExercise_Toss.do"
+
+        request = object : StringRequest(
+            Method.POST, url,
+            {response ->
+                Log.d("확인 : ", response.toString())
+                if(response.toString() == "운동정보를 보내기 위한 값들이 충분하지 않습니다."){
+                    Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this,"운동정보받기 성공!", Toast.LENGTH_SHORT).show()
+                    val response1 = JSONObject(response)
+                }
+            },
+            {error ->
+                Log.d("통신오류", error.printStackTrace().toString());
+            }){
+            @Throws(AuthFailureError::class)
+            override fun getParams(): MutableMap<String, String>? {
+                val params : MutableMap<String, String> = HashMap()
+
+                params["mb_card"] = mb_card.toString()
+
+                return params
+            }
+        }
+
+        request.setShouldCache(false)
+        queue.add(request)
 
     }}
 
