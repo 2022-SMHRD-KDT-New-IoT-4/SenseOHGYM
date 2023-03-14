@@ -15,11 +15,16 @@
         android:theme="@style/Theme.SenseOhGym"
         tools:targetApi="31">
         <activity
+            android:name=".McActivity"
+            android:exported="false" />
+        <activity
             android:name=".ManageUpdateActivity"
             android:exported="false" />
         <activity
             android:name=".ManageActivity"
             android:exported="true">
+
+
 
         </activity>
         <activity
@@ -34,6 +39,7 @@
         <activity
             android:name=".ChartActivity"
             android:exported="true">
+
         </activity>
         <activity
             android:name=".PopupActivity"
@@ -85,6 +91,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".MainActivity"
