@@ -41,10 +41,13 @@ class ManageUpdateActivity : AppCompatActivity() {
         val gymName = intent.getStringExtra("gym_name")
 
         // 라디오버튼 체크 값 넣어놓기
+        var check = ""
         if(mbGender == "남"){
             chMan2.isChecked = true
+            check = "남"
         }else {
             chWoman2.isChecked = true
+            check = "여"
         }
 
         updateName.setText(mbName)
@@ -55,7 +58,7 @@ class ManageUpdateActivity : AppCompatActivity() {
 //        updateAge.setText(mbAge)
 //        updateName.setText(mbJoinDate)
 
-        var check = ""
+
         rg2.setOnCheckedChangeListener { group, checkid ->
             if (checkid == R.id.chMan2) {
                 check = "남"

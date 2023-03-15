@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         btnMachine.setOnClickListener {
             val intent1 = Intent(this, MyHealthActivity::class.java)
             val mb_card = intent.getStringExtra("mb_card")
-            intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기
+            intent1.putExtra("mb_card", mb_card) // 카드번호 담아주기
             Log.d("카드번호 확인(운동정보) : ", mb_card.toString())
             startActivity(intent1)
         }
@@ -34,10 +34,11 @@ class MainActivity : AppCompatActivity() {
         btnRev.setOnClickListener {
             val intent1 = Intent(this@MainActivity, Rev1_1Activity::class.java)
             val mb_card = intent.getStringExtra("mb_card")
-            intent1.putExtra("mb_card",mb_card) // 카드번호 담아주기
-            Log.d("카드번호 확인(예약/취소) : ",mb_card.toString())
+            intent1.putExtra("mb_card", mb_card) // 카드번호 담아주기
+            Log.d("카드번호 확인(예약/취소) : ", mb_card.toString())
             startActivity(intent1)
         }
+
 
         // 3번째 기구정보로 가지는..
         btnExerInfo.setOnClickListener {
@@ -45,8 +46,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // 4번째 설정페이지로 가지는...이건 그냥 빈페이지임..
+        // 4번째 설정페이지로 가지는...도움말 페이지 구현
         btnSetting.setOnClickListener {
+            val intent = Intent(this, MemberHelpActivity::class.java)
+            startActivity(intent)
         }
 
     }
