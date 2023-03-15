@@ -42,10 +42,11 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="하체"
-        android:textSize="20dp"
+        android:text="pull up"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/btnExer1" />
 
     <Button
         android:id="@+id/btnEx4"
@@ -54,10 +55,11 @@
         android:layout_marginStart="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="어깨"
-        android:textSize="20dp"
+        android:text="lat pull down"
+        android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/btnEx2" />
 
     <Button
         android:id="@+id/btnEx5"
@@ -67,10 +69,10 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="삼두"
-        android:textSize="20dp"
+        android:text="arm pull down"
+        android:textSize="18dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEx3" />
 
     <Button
         android:id="@+id/btnEx6"
@@ -80,36 +82,36 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="이두"
-        android:textSize="20dp"
+        android:text="leg press"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEx4" />
 
     <Button
         android:id="@+id/btnExer1"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="가슴"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnEx3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7" />
+        android:text="chest fly"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
         android:id="@+id/btnEx2"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="등"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnEx4"
-        app:layout_constraintStart_toStartOf="@+id/guideline7" />
+        android:text="chest press"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <Button
         android:id="@+id/btnEx7"
@@ -119,8 +121,8 @@
         android:layout_marginEnd="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="코어"
-        android:textSize="20dp"
+        android:text="leg curl"
+        android:textSize="18dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/btnEx5" />
 
@@ -132,8 +134,8 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
-        android:text="전완근"
-        android:textSize="20dp"
+        android:text="v squat"
+        android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/btnEx6" />
 
@@ -160,5 +162,31 @@
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/machine2" />
+
+    <Button
+        android:id="@+id/btnEx9"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#3498DB"
+        android:fontFamily="@font/cute"
+        android:text="face pull"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/btnEx7" />
+
+    <Button
+        android:id="@+id/btnExer10"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#3498DB"
+        android:fontFamily="@font/cute"
+        android:text="dips"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/btnEx8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

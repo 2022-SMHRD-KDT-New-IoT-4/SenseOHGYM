@@ -76,6 +76,7 @@ class LoginActivity : AppCompatActivity() {
                     params["mb_name"] = name
                     params["mb_card"] = card
 
+
                     return params
                 }
             }

@@ -2,11 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#112350"
     android:padding="10dp"
-    tools:context=".Ex7Activity">
+    tools:context=".Ex9Activity">
 
 
     <TextView
@@ -15,14 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:fontFamily="@font/cute"
-        android:text="LEG CURL"
+        android:text="FACE PULL"
         android:textColor="#FFFFFF"
         android:textSize="34dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/btnExer07"
+        app:layout_constraintBottom_toBottomOf="@+id/btnExer09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnExer07"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="@+id/btnExer09" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="허벅지의 뒷면인 햄스트링을 단련시킬 수 있는 운동이에요!"
+                android:text="얼굴쪽으로 당겨 페이스풀이라는 이름이 붙었어요. 어깨 후면을 자극하는 운동이고, 어깨를 펴주는 효과도 있기 때문에 라운드 숄더가 있는 사람에게도 좋은 운동이에요!"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -75,15 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1. 몸을 머신 중앙에 위치시키고, 무릎이 패드 끝부분에 닿도록 엎드려주세요."
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="2. 발목 패드가 아킬레스건 위쪽에 닿도록 설정해 주세요."
+                android:text="1. 케이블이 얼굴 앞에 오도록 조정해주세요."
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -91,15 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="3. 발목이 90도가 될 수 있도록 몸쪽으로 발을 당겨주세요."
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/textView45"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="4. 손잡이를 잡고 머신과 몸을 밀착시켜주세요."
+                android:text="2. 그립을 두 손으로 잡고, 팔을 쭉 펴서 얼굴 앞에 위치시킵니다."
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -122,7 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1. 허벅지 뒤쪽과 엉덩이에 힘을 주고, 발목 패드를 엉덩이까지 올려주세요."
+                android:text="1. 귀 위쪽으로 그립을 당겨주세요"
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -130,7 +114,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="2. 무게의 저항을 받으면서 무릎이 완전히 펴지기 전까지만 내려주세요."
+                android:text="2. 당길 때, 날개뼈가 과도하게 접히지 않게 해주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3. 다시 천천히 시작 자세로 돌아오세요."
                 android:textColor="#FFFFFF" />
 
             <TextView
@@ -153,29 +145,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1. 무릎이 완전히 펴지지 않도록 주의해주세요."
-                android:textColor="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/textView41"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="2. 상체가 들리지 않도록 주의해주세요."
+                android:text="1. 날개뼈를 과도하게 접으면 후면 어깨가 아닌 승모근이 사용되므로 주의해주세요."
                 android:textColor="#FFFFFF" />
 
         </LinearLayout>
     </ScrollView>
 
     <ImageButton
-        android:id="@+id/btnExer07"
-        android:layout_width="180dp"
+        android:id="@+id/btnExer09"
+        android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:scaleType="fitXY"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ex07" />
+        app:srcCompat="@drawable/ex09" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

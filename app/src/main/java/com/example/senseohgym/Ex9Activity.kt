@@ -6,25 +6,19 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
-class Ex5Activity : AppCompatActivity() {
+class Ex9Activity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex5)
+        setContentView(R.layout.activity_ex9)
 
-        val btnExer05 = findViewById<ImageButton>(R.id.btnExer05)
 
-        btnExer05.setOnClickListener {
-            val uri = Uri.parse("https://www.youtube.com/watch?v=YntwjLKHlLk")
+        val btnExer09 = findViewById<ImageButton>(R.id.btnExer09)
+
+        btnExer09.setOnClickListener {
+            val uri = Uri.parse("https://www.youtube.com/watch?v=2ZGmW0k-eUk")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
-
-
-
-        }
-
     }
-}
+}}
