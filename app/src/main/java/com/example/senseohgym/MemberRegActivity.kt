@@ -46,14 +46,14 @@ class MemberRegActivity : AppCompatActivity() {
         }
 
         btnMemberJoin.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, AdminActivity::class.java)
             val birthday = mb_birthdate.text.toString()
             val name = mb_name.text.toString()
             val gymName = gym_name.text.toString()
             val type = mb_type1.text.toString()
             val card = mb_card.text.toString()
 
-//          이름 통일 필요
+            // 이름 통일 필요
             intent.putExtra("mb_gender", check)
             intent.putExtra("mb_birthdate", birthday)
             intent.putExtra("mb_name", name)
