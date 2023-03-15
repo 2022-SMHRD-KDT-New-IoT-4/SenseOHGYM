@@ -3,6 +3,7 @@ package com.example.senseohgym
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.RequestQueue
@@ -24,7 +25,7 @@ class Rev1_1Activity : AppCompatActivity() {
 
         val rcRev = findViewById<RecyclerView>(R.id.rcRev)
         val mb_card = intent.getStringExtra("mb_card").toString()
-
+        Log.d("예약페이지 카드번호 확인",mb_card.toString())
 
 //        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
@@ -45,7 +46,7 @@ class Rev1_1Activity : AppCompatActivity() {
         revExer.add(RevVo("dips", "예약여부"))
 
 
-        val adapter = RevAdapter(applicationContext, revExer, mb_card)
+        val adapter = RevAdapter(applicationContext, revExer, mb_card.toString()) //파라미터값으로 mb_card 변수 추가
         rcRev.adapter = adapter
         rcRev.layoutManager = LinearLayoutManager(this)
 

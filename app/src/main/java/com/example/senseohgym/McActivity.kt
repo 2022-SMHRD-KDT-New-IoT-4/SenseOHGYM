@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
+import org.json.JSONArray
 import org.json.JSONObject
 
 // 회원페이지 - 운동정보 - 기구 사용횟수
@@ -41,12 +42,12 @@ class McActivity : AppCompatActivity() {
         request = object : StringRequest(
             Method.POST, url,
             {response ->
-
+                Log.d("확인", response.toString()) //서버에서 넘어온 값 확인
                 if(response.toString() == "운동정보를 보내기 위한 값들이 충분하지 않습니다."){
                     Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this,"운동정보받기 성공!", Toast.LENGTH_SHORT).show()
-                    val response1 = JSONObject(response)
+                    val response1 = JSONArray(response)
 
                 }
 
@@ -59,7 +60,9 @@ class McActivity : AppCompatActivity() {
                 val params : MutableMap<String, String> = HashMap()
 
                 params["mb_card"] = mb_card.toString()
-
+                // btn_type 선언해주기. 왜? 서버쪽에서 ChatActivity와 McActivity 구별을 위해
+                // ChatActivity는 0으로, McActivity는 1로 구별
+                params["btn_type"] = "1";
 
                 return params
             }
