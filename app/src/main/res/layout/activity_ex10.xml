@@ -5,21 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#112350"
-    >
+    tools:context=".Ex10Activity">
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/cute"
-        android:gravity="center"
-        android:text="LEG PRESS"
+        android:text="DIPS"
         android:textColor="#FFFFFF"
         android:textSize="34dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
