@@ -33,12 +33,10 @@ class ChartActivity : AppCompatActivity() {
 
         queue = Volley.newRequestQueue(this)
 
-
         // mb_card값 가져와서 Log로 값 잘나오는지 확인
         val mb_card = intent.getStringExtra("mb_card")
         Log.d("여기까지 오류 이상없음 : ", mb_card.toString())
         Log.d("카드번호 확인(ChartActivity) : ", mb_card.toString())
-
 
         val barChart = findViewById<BarChart>(R.id.barchart)
 
@@ -47,7 +45,6 @@ class ChartActivity : AppCompatActivity() {
 
         // 장제원 url
         var url = "http://221.156.243.155:8081/Senseohgym/UserExercise_Toss.do"
-
 
         request = object : StringRequest(
             Method.POST, url,
@@ -58,9 +55,7 @@ class ChartActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(this,"운동정보받기 성공!", Toast.LENGTH_SHORT).show()
                     val response1 = JSONObject(response)
-
                 }
-
             },
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString());
@@ -71,22 +66,12 @@ class ChartActivity : AppCompatActivity() {
 
                 params["mb_card"] = mb_card.toString()
 
-
                 return params
             }
         }
 
         request.setShouldCache(false)
         queue.add(request)
-
-
-
-
-
-
-
-
-
 
     }}
 
