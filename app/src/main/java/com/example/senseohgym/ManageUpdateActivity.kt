@@ -94,11 +94,11 @@ class ManageUpdateActivity : AppCompatActivity() {
                 override fun getParams(): MutableMap<String, String>? {
                     val params : MutableMap<String, String> = HashMap()
 
-                    params["mb_name"] = updateName.text.toString()
+                    params["mb_name"] = mbName.toString()
                     params["mb_card"] = updateCard.text.toString()
                     params["mb_birthdate"] = updateBirth.text.toString()
                     params["mb_gender"] = check
-                    params["gym_name"] = updateHealth.text.toString()
+                    params["gym_name"] = gymName.toString()
 
                     return params
                 }

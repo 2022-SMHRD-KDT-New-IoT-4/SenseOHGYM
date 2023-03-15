@@ -25,6 +25,8 @@ class MemberRegActivity : AppCompatActivity() {
 
         queue  = Volley.newRequestQueue(this)
 
+        val gym_name1 = intent.getStringExtra("gym_name")
+
         val btnMemberJoin = findViewById<Button>(R.id.btnMemberJoin)
         val mb_gender = findViewById<RadioGroup>(R.id.rg) // 성별
         val mb_card = findViewById<EditText>(R.id.etCard) // 회원카드
@@ -32,6 +34,9 @@ class MemberRegActivity : AppCompatActivity() {
         val gym_name = findViewById<EditText>(R.id.etGymName) // 헬스장이름
         val mb_birthdate = findViewById<EditText>(R.id.etBitrhday) // 생년월일
         val mb_type1 = findViewById<EditText>(R.id.etType) // 회원유형
+
+
+        gym_name.setText(gym_name1)
 
         var url = "http://221.156.243.155:8081/Senseohgym3/Member_Join.do"
 
@@ -52,7 +57,7 @@ class MemberRegActivity : AppCompatActivity() {
             val gymName = gym_name.text.toString()
             val type = mb_type1.text.toString()
             val card = mb_card.text.toString()
-
+1
             // 이름 통일 필요
             intent.putExtra("mb_gender", check)
             intent.putExtra("mb_birthdate", birthday)
