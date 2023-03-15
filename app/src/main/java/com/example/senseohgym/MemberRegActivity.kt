@@ -52,7 +52,7 @@ class MemberRegActivity : AppCompatActivity() {
             val gymName = gym_name.text.toString()
             val type = mb_type1.text.toString()
             val card = mb_card.text.toString()
-
+1
             // 이름 통일 필요
             intent.putExtra("mb_gender", check)
             intent.putExtra("mb_birthdate", birthday)
