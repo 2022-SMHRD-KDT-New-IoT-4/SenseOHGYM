@@ -20,6 +20,8 @@ class ExerActivity : AppCompatActivity() {
         val btnEx6 = findViewById<Button>(R.id.btnEx6)
         val btnEx7 = findViewById<Button>(R.id.btnEx7)
         val btnEx8 = findViewById<Button>(R.id.btnEx8)
+        val btnEx9 = findViewById<Button>(R.id.btnEx9)
+        val btnEx10 = findViewById<Button>(R.id.btnEx10)
 
         btnExer1.setOnClickListener {
             val intent = Intent(this, Ex1Activity::class.java)
@@ -53,6 +55,11 @@ class ExerActivity : AppCompatActivity() {
             val intent = Intent(this, Ex8Activity::class.java)
             startActivity(intent)
         }
+        btnEx9.setOnClickListener {
 
+        }
+        btnEx10.setOnClickListener {
+
+        }
     }
 }

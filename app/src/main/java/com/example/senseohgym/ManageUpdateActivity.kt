@@ -36,12 +36,12 @@ class ManageUpdateActivity : AppCompatActivity() {
         val mbName = intent.getStringExtra("name")
         val mbCard = intent.getStringExtra("card")
         val mbBirth = intent.getStringExtra("birth")
-        val mbAge = intent.getStringExtra("age") // 이름 바꿔주기 manageAdapter까지
+        val mbGender = intent.getStringExtra("gender") // 이름 바꿔주기 manageAdapter까지
         val mbJoinDate = intent.getStringExtra("joindate")
         val gymName = intent.getStringExtra("gym_name")
 
         // 라디오버튼 체크 값 넣어놓기
-        if(mbAge == "남"){
+        if(mbGender == "남"){
             chMan2.isChecked = true
         }else {
             chWoman2.isChecked = true
@@ -94,11 +94,11 @@ class ManageUpdateActivity : AppCompatActivity() {
                 override fun getParams(): MutableMap<String, String>? {
                     val params : MutableMap<String, String> = HashMap()
 
-                    params["mb_name"] = updateName.text.toString()
+                    params["mb_name"] = mbName.toString()
                     params["mb_card"] = updateCard.text.toString()
                     params["mb_birthdate"] = updateBirth.text.toString()
                     params["mb_gender"] = check
-                    params["gym_name"] = updateHealth.text.toString()
+                    params["gym_name"] = gymName.toString()
 
                     return params
                 }

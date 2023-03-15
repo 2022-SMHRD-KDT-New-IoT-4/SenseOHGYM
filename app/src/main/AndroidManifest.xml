@@ -15,6 +15,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Ex10Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Ex9Activity"
+            android:exported="false" />
+        <activity
+            android:name=".MemberHelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".McActivity"
             android:exported="false" />
         <activity
@@ -22,14 +31,10 @@
             android:exported="false" />
         <activity
             android:name=".ManageActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".MachineDataActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MemberRegActivity"
             android:exported="true" />
@@ -92,7 +97,6 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"

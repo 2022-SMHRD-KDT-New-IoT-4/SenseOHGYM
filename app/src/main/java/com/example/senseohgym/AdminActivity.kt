@@ -16,8 +16,11 @@ class AdminActivity : AppCompatActivity() {
         val exer_reg = findViewById<ImageButton>(R.id.exer_reg)
         val MemberManage = findViewById<ImageButton>(R.id.MemberManage)
 
+        val gym_name = intent.getStringExtra("gym_name")
+
         member_reg.setOnClickListener {
             val intent = Intent(this, MemberRegActivity::class.java)
+            intent.putExtra("gym_name", gym_name)
             startActivity(intent)
         }
 

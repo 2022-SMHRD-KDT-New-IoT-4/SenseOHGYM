@@ -20,6 +20,7 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.json.JSONArray
 import org.json.JSONObject
 
 // 통신하는 코드 요청 (Volley 부분)
@@ -57,8 +58,13 @@ class ChartActivity : AppCompatActivity() {
                     Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this,"운동정보받기 성공!", Toast.LENGTH_SHORT).show()
-                    val response1 = JSONObject(response)
-
+                    //val response1 = JSONObject(response) --> Object형태여서 Array로바꿔줌
+                    val response1 = JSONArray(response)
+                    // parsing 예시. 필요하면 사용하려고 적어뒀음
+                    // 0번째 값을 추출하기 위한 예시
+                    // val jsonObject = response1.getJSONObject(0)
+                    // val usetime = jsonObject.getString("rs_usetime")
+                    // Log.d("0번째 사용시간 : ", usetime.toString())
                 }
 
             },
@@ -70,6 +76,9 @@ class ChartActivity : AppCompatActivity() {
                 val params : MutableMap<String, String> = HashMap()
 
                 params["mb_card"] = mb_card.toString()
+                // btn_type 선언해주기. 왜? 서버쪽에서 ChatActivity와 McActivity 구별을 위해
+                // ChatActivity는 0으로, McActivity는 1로 구별
+                params["btn_type"] = "0";
 
 
                 return params

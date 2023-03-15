@@ -17,8 +17,6 @@
         android:textSize="34dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.535" />
@@ -73,13 +71,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="헬스장명/회원유형"
+        android:fontFamily="@font/cute"
+        android:text="헬스장명"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:fontFamily="@font/cute"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/updateBirth"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -144,7 +140,7 @@
         android:id="@+id/imageView3"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="30dp"
@@ -157,15 +153,13 @@
         app:srcCompat="@drawable/member" />
 
     <EditText
-        android:singleLine="true"
-        android:maxLines="1"
         android:id="@+id/updateName"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
-        android:hint="회원이름"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#FFB8B8B8"
         android:textSize="24dp"
@@ -173,14 +167,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:singleLine="true"
-        android:maxLines="1"
         android:id="@+id/updateCard"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:background="#FFFFFF"
-        android:hint="카드번호"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#B8B8B8"
         android:textSize="24dp"
@@ -189,15 +182,13 @@
         app:layout_constraintTop_toTopOf="@+id/updateName" />
 
     <EditText
-        android:singleLine="true"
-        android:maxLines="1"
         android:id="@+id/updateBirth"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
-        android:hint="생년월일"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#FFB8B8B8"
         android:textSize="24dp"
@@ -205,15 +196,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
-        android:singleLine="true"
-        android:maxLines="1"
         android:id="@+id/updateHealth"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:background="#FFFFFF"
-        android:hint="헬스장명"
+        android:maxLines="1"
+        android:singleLine="true"
         android:textColor="#000000"
         android:textColorHint="#FFB8B8B8"
         android:textSize="24dp"

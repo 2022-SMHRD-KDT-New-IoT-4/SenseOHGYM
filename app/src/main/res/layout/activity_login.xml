@@ -33,7 +33,7 @@
         android:backgroundTint="#F4EFEF"
         android:hint="카드번호"
         android:imeOptions="actionDone"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:selectAllOnFocus="true"
         android:textColor="#020202"
         app:layout_constraintEnd_toEndOf="@+id/etName"
