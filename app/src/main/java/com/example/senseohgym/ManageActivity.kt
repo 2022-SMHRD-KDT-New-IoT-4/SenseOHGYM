@@ -74,7 +74,10 @@ class ManageActivity : AppCompatActivity() {
             },
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString())
-            }){
+            })
+
+
+        {
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
                 val params : MutableMap<String, String> = HashMap()

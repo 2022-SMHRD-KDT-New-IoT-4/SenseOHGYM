@@ -15,6 +15,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
+import org.json.JSONArray
 import java.text.NumberFormat
 
 // 기구 데이터 (관리자 페이지)
@@ -34,12 +35,16 @@ class MachineDataActivity : AppCompatActivity() {
 
         queue = Volley.newRequestQueue(this)
 
-        val url = "http://211.107.188.212:8081/Senseohgym/Member_Login.do"
+        val url = "http://211.107.188.212:8081/Senseohgym/Admin_ExerciseCheck.do"
 
         request = object : StringRequest(
             Request.Method.POST, url,
             {response ->
-
+                Log.d("운동정보 결과", response.toString())
+                val result = JSONArray(response)
+                // 운동기구 갯수는 result.length() 를 사용
+                Log.d("운동기구이름",result.getJSONObject(0).getString("rev_machine"))
+                Log.d("사용횟수",result.getJSONObject(0).getString("machine_count"))
             },
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString())
@@ -54,6 +59,9 @@ class MachineDataActivity : AppCompatActivity() {
                 return params
             }
         }
+
+        request.setShouldCache(false)
+        queue.add(request)
 
         class CustomPieEntry(
             x: Float,

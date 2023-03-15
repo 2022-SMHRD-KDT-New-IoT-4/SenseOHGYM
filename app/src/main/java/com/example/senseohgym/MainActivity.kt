@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent1)
         }
 
+
         // 3번째 기구정보로 가지는..
         btnExerInfo.setOnClickListener {
             val intent = Intent(this, ExerActivity::class.java)

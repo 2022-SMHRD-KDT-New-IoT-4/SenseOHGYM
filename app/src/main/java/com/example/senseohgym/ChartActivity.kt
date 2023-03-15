@@ -53,7 +53,7 @@ class ChartActivity : AppCompatActivity() {
         request = object : StringRequest(
             Method.POST, url,
             {response ->
-                Log.d("확인 : ", response.toString()) //서버에서 넘어온 값 확인
+                Log.d("확인 : ", response.toString())
                 if(response.toString() == "운동정보를 보내기 위한 값들이 충분하지 않습니다."){
                     Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
                 }else{
