@@ -35,16 +35,13 @@ class PopupActivity : AppCompatActivity() {
             val btn_OK = findViewById<Button>(R.id.btn_OK)
             val btn_Can = findViewById<Button>(R.id.btn_Can)
 
-
-            val exer_name = intent.getStringExtra("exername")
-
-
             queue = Volley.newRequestQueue(this@PopupActivity)
 
-            // 예약관련파일 url 값
-            var url =
-                "http://221.156.185.168:8081/Senseohgym/.do"
+            val exer_name = intent.getStringExtra("exername") // 사용기구명
+            val mb_card = intent.getStringExtra("mb_card") // 카드번호
 
+            // 예약관련파일 url 값
+            var url = "http://221.156.243.155:8081/Senseohgym3/Reservation_Join.do"
 
             btn_OK.setOnClickListener {
                 if (etUseTime.text.toString() <= "30") {
@@ -55,7 +52,6 @@ class PopupActivity : AppCompatActivity() {
                     Log.d("시간확인", "사용할 시간: $etUseTime")
                     // 기구정보 잘 넘어오나 확인
                     Log.d("기구확인", "사용할 기구: $exer_name")
-
 
                     intent.putExtra("etUseTime", etUseTime)
                     intent.putExtra("exername", exer_name)
@@ -69,33 +65,28 @@ class PopupActivity : AppCompatActivity() {
                         { error ->
                             Log.d("실패했다면", error.printStackTrace().toString())
                         }
-
                     ) {
                         @Throws(AuthFailureError::class)
                         override fun getParams(): MutableMap<String, String>? {
                             val params: MutableMap<String, String> = HashMap()
-
                             params["etUseTime"] = etUseTime
                             params["exername"] = exer_name.toString()
-
-
                             return params
                         }
                     }
-
                     request.setShouldCache(false)
                     queue.add(request)
                     startActivity(intent)
-                    Toast.makeText(this@PopupActivity, "예약이\n완료되었습니다.", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this@PopupActivity, "30분 이내로\n입력해주세요", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@PopupActivity, "예약이\n완료되었습니다.",
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@PopupActivity, "30분 이내로\n입력해주세요",
+                        Toast.LENGTH_SHORT).show()
                 }
-
             }
             btn_Can.setOnClickListener {
                 finish()
             }
-
         }
     }
 }
