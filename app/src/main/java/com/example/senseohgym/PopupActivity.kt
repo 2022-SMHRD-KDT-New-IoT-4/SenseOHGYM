@@ -44,7 +44,8 @@ class PopupActivity : AppCompatActivity() {
             var url = "http://221.156.243.155:8081/Senseohgym/Reservation_Join.do"
 
             btn_OK.setOnClickListener {
-                if (etUseTime.text.toString() <= "30") {
+
+                if (etUseTime.text.toString().toInt() <= 30) {
                     var intent = Intent(this@PopupActivity, Rev1_1Activity::class.java)
 
                     var etUseTime = etUseTime.text.toString()
@@ -73,14 +74,11 @@ class PopupActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(context, "예약실패!", Toast.LENGTH_SHORT).show()
                                 val response1 = JSONObject(response)
-
                             }
                         },
-                        {error ->
+                        { error ->
                             Log.d("통신오류", error.printStackTrace().toString())
-
                         }
-
                     ) {
                         @Throws(AuthFailureError::class)
                         override fun getParams(): MutableMap<String, String>? {
@@ -93,18 +91,19 @@ class PopupActivity : AppCompatActivity() {
                             return params
                         }
                     }
-
                     request.setShouldCache(false)
                     queue.add(request)
-
                     startActivity(intent)
-
+                } else
+//                        (etUseTime.text.toString().toInt() > 30){
+                {
+                    Toast.makeText(context, "30분 이내로 시간을 입력하세요.", Toast.LENGTH_SHORT).show()
                 }
-                btn_Can.setOnClickListener {
-                    finish()
-                }
-
+            }
+            btn_Can.setOnClickListener {
+                finish()
             }
         }
     }
 }
+
