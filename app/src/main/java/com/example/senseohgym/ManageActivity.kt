@@ -61,7 +61,7 @@ class ManageActivity : AppCompatActivity() {
 
                 //manage_list.add(manageVO("김깅지","120","11.11.11","남","23.03.10"))
 
-                val adapter = manageAdapter(applicationContext, manage_list)
+                val adapter = manageAdapter(this, manage_list)
                 manageRc.adapter = adapter
                 manageRc.layoutManager = LinearLayoutManager(this)
 
@@ -90,6 +90,8 @@ class ManageActivity : AppCompatActivity() {
 
         request.setShouldCache(false)
         queue.add(request)
+
+
 
 
 
