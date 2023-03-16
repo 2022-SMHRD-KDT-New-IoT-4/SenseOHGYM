@@ -2,9 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#112350"
+    android:padding="10dp"
     tools:context=".Ex10Activity">
 
 
@@ -12,13 +14,159 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/cute"
         android:text="DIPS"
         android:textColor="#FFFFFF"
         android:textSize="34dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnExer10"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/btnExer10" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="180dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="코치의 코멘트"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="밑 가슴과 삼두를 키우는데 효과적인 운동이에요. 머신 운동은 맨몸 운동보다 안정적으로 자극을 받을 수 있어요. 팔꿈치가 벌어지지 않도록 주의하면서 운동을 진행해주세요!!"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="운동 가이드"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1. 손잡이를 잡았을 때 팔꿈치가 직각이 될 수 있도록 머신을 세팅해주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3. 가슴을 펴고, 허리를 세워주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2. 엉덩이와 등을 머신에 밀착시켜 주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="운동 동작"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1. 손잡이를 강하게 잡고, 아래를 밀어주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2. 무게를 버티며 천천히 시작 자세로 돌아와 주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="주의사항"
+                android:textColor="#FFFFFF"
+                android:textSize="26dp" />
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1. 팔꿈치가 벌어지지 않도록 주의해주세요."
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2. 팔을 과도하게 펴지 않도록 주의해주세요."
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btnExer10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ex10" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
