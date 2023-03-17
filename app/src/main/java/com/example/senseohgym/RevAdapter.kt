@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.AuthFailureError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
 import org.json.JSONObject
 
 class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: String) :
@@ -45,10 +46,12 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
         return data.size
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val exerName = data[position].exer
         holder.exer_name.text = data[position].exer
         holder.rev_ox.text = data[position].rev
+        Log.d("운동기구명 확인",exerName)
 
-        var url = "http://211.107.188.212:8081/Senseohgym/Member_Login.do"
+        var url = "http://221.156.243.155:8081/Senseohgym/Reservation_after.do"
         // 요청 보낼 프로그램 주소 만들기
         // 기구 이름 빼서 그 기구이름으로 된 예약정보가 있는지 확인 후
         // 있으면 1 보내주고 없으면 0 보내주기
@@ -57,7 +60,10 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
             Method.POST, url,
             { response ->
                 // 1 or 0
+
                 Log.d("결과", response.toString())
+
+
                 if (response.toInt() == 1) {
                     // 예약있음 -> 예약불가
                     holder.rev_ox.text = "예약불가"
@@ -70,11 +76,13 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
             override fun getParams(): MutableMap<String, String>? {
                 val params: MutableMap<String, String> = HashMap()
 
-                params["exer_name"] = holder.exer_name.toString()
+                params["exer_name"] = exerName
 
                 return params
             }
         }
+        request.setShouldCache(false)
+        queue.add(request)
 
         holder.btn_rev.setOnClickListener {
             // 누르는데까지 문제없는가...?
