@@ -89,6 +89,7 @@ class ManageUpdateActivity : AppCompatActivity() {
                         intent.putExtra("gym_name",gymName)
                     }
                     startActivity(intent)
+                    finish()
                 },
                 {error ->
                     Log.d("통신오류", error.printStackTrace().toString());
@@ -97,8 +98,8 @@ class ManageUpdateActivity : AppCompatActivity() {
                 override fun getParams(): MutableMap<String, String>? {
                     val params : MutableMap<String, String> = HashMap()
 
-                    params["mb_name"] = mbName.toString()
-                    params["mb_card"] = updateCard.text.toString()
+                    params["mb_name"] = updateName.text.toString()
+                    params["mb_card"] = mbCard.toString()
                     params["mb_birthdate"] = updateBirth.text.toString()
                     params["mb_gender"] = check
                     params["gym_name"] = gymName.toString()
@@ -110,8 +111,6 @@ class ManageUpdateActivity : AppCompatActivity() {
             updateRequest.setShouldCache(false)
             queue.add(updateRequest)
 
-
-            startActivity(intent)
         }
 
         // 회원정보 삭제
@@ -134,6 +133,7 @@ class ManageUpdateActivity : AppCompatActivity() {
                         intent.putExtra("gym_name",gymName)
                     }
                     startActivity(intent)
+                    finish()
                 },
                 {error ->
                     Log.d("통신오류", error.printStackTrace().toString());
@@ -146,6 +146,7 @@ class ManageUpdateActivity : AppCompatActivity() {
                     params["mb_card"] = updateCard.text.toString()
                     params["gym_name"] = updateHealth.text.toString()
 
+
                     return params
                 }
             }
@@ -154,7 +155,6 @@ class ManageUpdateActivity : AppCompatActivity() {
             queue.add(deleteRequest)
 
 
-            startActivity(intent)
         }
 
 

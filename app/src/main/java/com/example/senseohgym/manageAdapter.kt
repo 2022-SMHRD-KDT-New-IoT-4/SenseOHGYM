@@ -1,5 +1,6 @@
 package com.example.senseohgym
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -10,6 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.senseohgym.manageAdapter as manageAdapter1
+
 
 class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
     RecyclerView.Adapter<manageAdapter1.ViewHolder>() {
@@ -64,6 +66,7 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
 
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
+            (context as Activity).finish()
         } else {
             holder.LL.setBackgroundColor(Color.parseColor("#00ff0000"))
         }
@@ -73,6 +76,7 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
 
             notifyItemChanged(beforePos)
             notifyItemChanged(selectPos)
+
         }
     }
 }

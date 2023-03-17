@@ -177,7 +177,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnEx7" />
 
     <Button
-        android:id="@+id/btnEx10"
+        android:id="@+id/btnExer10"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
