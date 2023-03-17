@@ -1,5 +1,6 @@
 package com.example.senseohgym
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -30,24 +31,20 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
         var rev_ox: TextView // 예약여부
         var btn_rev: Button
 
-
         init {
             exer_name = view.findViewById(R.id.exer_name)
             rev_ox = view.findViewById(R.id.rev_ox)
             btn_rev = view.findViewById(R.id.btn_rev)
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var inflater = LayoutInflater.from(context)
         var view = inflater.inflate(R.layout.rev_list, parent, false)
         return ViewHolder(view)
     }
-
     override fun getItemCount(): Int {
         return data.size
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exerName = data[position].exer
         holder.exer_name.text = data[position].exer
@@ -100,6 +97,7 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
             // 어댑터 파일은 액티비티가 아니라서 앞에 액티비티의 속성을 받아와서..
             // 스타트액티비티 명령어를 실행시킬 수 있음
             context.startActivity(intent)
+            (context as Activity).finish()
         }
     }
 }

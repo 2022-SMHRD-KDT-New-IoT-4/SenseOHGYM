@@ -71,10 +71,9 @@ class PopupActivity : AppCompatActivity() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                                 startActivity(intent)
-
                             } else {
                                 Toast.makeText(context, "예약실패!", Toast.LENGTH_SHORT).show()
-                                //val response1 = JSONObject(response)
+                                val response1 = JSONObject(response)
                             }
                         },
                         { error ->
@@ -95,9 +94,8 @@ class PopupActivity : AppCompatActivity() {
                     request.setShouldCache(false)
                     queue.add(request)
                     startActivity(intent)
-                } else
-//                        (etUseTime.text.toString().toInt() > 30){
-                {
+                    finish()
+                } else {
                     Toast.makeText(context, "30분 이내로 시간을 입력하세요.", Toast.LENGTH_SHORT).show()
                 }
             }
