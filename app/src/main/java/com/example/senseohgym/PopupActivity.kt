@@ -70,7 +70,7 @@ class PopupActivity : AppCompatActivity() {
                                     "예약 성공입니다.",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                startActivity(intent)
+
                             } else {
                                 Toast.makeText(context, "예약실패!", Toast.LENGTH_SHORT).show()
                                 val response1 = JSONObject(response)
@@ -100,8 +100,14 @@ class PopupActivity : AppCompatActivity() {
                 }
             }
             btn_Can.setOnClickListener {
+                var intent = Intent(this@PopupActivity, Rev1_1Activity::class.java)
+                startActivity(intent)
                 finish()
+//                var intent = Intent(this@PopupActivity, RevAdapter::class.java)
+//                startActivity(intent)
             }
         }
     }
+
+
 }
