@@ -63,7 +63,6 @@ class MachineDataActivity : AppCompatActivity() {
                         machine.getString("rev_machine"),
                         machine.getInt("machine_count")
 
-
                     ))
                     sum += machine.getInt("machine_count")
                     Log.d("sum Check",sum.toString())
