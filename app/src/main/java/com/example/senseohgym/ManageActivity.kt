@@ -76,7 +76,6 @@ class ManageActivity : AppCompatActivity() {
                 Log.d("통신오류", error.printStackTrace().toString())
             })
 
-
         {
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
