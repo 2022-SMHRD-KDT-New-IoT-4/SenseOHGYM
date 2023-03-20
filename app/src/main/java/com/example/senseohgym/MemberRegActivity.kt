@@ -38,7 +38,7 @@ class MemberRegActivity : AppCompatActivity() {
 
         gym_name.setText(gym_name1)
 
-        var url = "http://221.156.243.155:8081/Senseohgym3/Member_Join.do"
+        var url = "http://221.156.243.155:8081/Senseohgym/Member_Join.do"
 
 
         var check = ""

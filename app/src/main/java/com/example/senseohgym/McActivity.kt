@@ -45,7 +45,7 @@ class McActivity : AppCompatActivity() {
         request = object : StringRequest(
             Method.POST, url,
             {response ->
-                Log.d("확인", response.toString()) //서버에서 넘어온 값 확인
+                Log.d("넘어온 값 확인 : ", response.toString()) //서버에서 넘어온 값 확인
                 if(response.toString() == "운동정보를 보내기 위한 값들이 충분하지 않습니다."){
                     Toast.makeText(this,"값이 충분하지 않음!.", Toast.LENGTH_SHORT).show()
                 }else{
@@ -92,7 +92,6 @@ class McActivity : AppCompatActivity() {
                         Color.rgb(52, 152, 219),
                        )
 
-
                     // BarData 생성
                     val data = BarData(dataSet)
 
@@ -130,13 +129,6 @@ class McActivity : AppCompatActivity() {
                     val legend: Legend = mcChart.legend
                     legend.isEnabled = false
 
-
-                    // bar 안에 표시되는 값의 위치와 글꼴 설정
-
-                    Log.d("여기확인", xArray.toString())
-
-
-
                     var index = 0
                     val valueFormatter = object : ValueFormatter() {
                         override fun getFormattedValue(value: Float): String {
@@ -159,15 +151,11 @@ class McActivity : AppCompatActivity() {
 //                                5 -> "바벨"
 //                                6 -> "바벨"
                                 else -> throw IndexOutOfBoundsException("index out")
-
-
                             }
                         }
                     }
 
                     val valueTextSize = 15f
-
-
                     val valueTextColor = ContextCompat.getColor(this, R.color.white)
 
                     Log.d("도착확인4", "여기")
@@ -184,9 +172,7 @@ class McActivity : AppCompatActivity() {
 
                     mcChart.invalidate()
 
-                }
-
-            },
+                } },
             {error ->
                 Log.d("통신오류", error.printStackTrace().toString());
             }){
@@ -203,15 +189,8 @@ class McActivity : AppCompatActivity() {
                 return params
             }
         }
-
         request.setShouldCache(false)
         queue.add(request)
-
-
-
-// bar 데이터 생성
-
-
 
     }
 }

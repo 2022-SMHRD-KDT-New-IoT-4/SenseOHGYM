@@ -88,7 +88,7 @@ class MachineDataActivity : AppCompatActivity() {
 ////                    for(i in 0 until machine_list.size){
 ////
 ////                    }
-//                            // 서버에서 보내준 값을 넣는 부분
+//                    서버에서 보내준 값을 넣는 부분
 //                    Chart(40f, "런닝머신"),
 //                    Chart(10f, "바벨"),
 //                    //CustomPieEntry(10f, "싸이클"),
