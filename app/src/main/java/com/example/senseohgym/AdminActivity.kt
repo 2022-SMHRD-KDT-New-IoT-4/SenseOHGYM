@@ -35,7 +35,5 @@ class AdminActivity : AppCompatActivity() {
             manageIntent.putExtra("gym_name", intent.getStringExtra("gym_name").toString())
             startActivity(manageIntent)
         }
-
-
     }
 }

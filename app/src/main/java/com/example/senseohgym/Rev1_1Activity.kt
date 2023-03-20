@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.AuthFailureError
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 // 실시간 기구 사용여부에 .. 들어오면 운동 기구 목록이 보여지는 화면입니다
 // 여기서 바로 기구 예약하기를 사용할 수 있어야함..
@@ -27,24 +29,23 @@ class Rev1_1Activity : AppCompatActivity() {
         val mb_card = intent.getStringExtra("mb_card").toString()
         Log.d("예약페이지 카드번호 확인",mb_card.toString())
 
-//        queue = Volley.newRequestQueue(this@Rev1_1Activity)
+        queue = Volley.newRequestQueue(this@Rev1_1Activity)
 
-//        var url =
-//            "http://221.156.185.168:8081/Senseohgym/Member_Login.do"
+        var url =
+            "http://211.107.188.212:8081/Senseohgym/Reservation_after.do"
 
         val revExer = ArrayList<RevVo>()
 
-        revExer.add(RevVo("chest fly", "예약가능"))
-        revExer.add(RevVo("chest press", "예약가능"))
-        revExer.add(RevVo("pull up", "예약가능"))
-        revExer.add(RevVo("lat pull down", "예약가능"))
-        revExer.add(RevVo("arm pull down", "예약가능"))
-        revExer.add(RevVo("leg press", "예약가능"))
-        revExer.add(RevVo("leg curl", "예약가능"))
-        revExer.add(RevVo("v squat", "예약가능"))
-        revExer.add(RevVo("face pull", "예약가능"))
+        revExer.add(RevVo("chestFly", "예약가능"))
+        revExer.add(RevVo("chestPress", "예약가능"))
+        revExer.add(RevVo("pullUp", "예약가능"))
+        revExer.add(RevVo("latPullDown", "예약가능"))
+        revExer.add(RevVo("armPullDown", "예약가능"))
+        revExer.add(RevVo("legPress", "예약가능"))
+        revExer.add(RevVo("legCurl", "예약가능"))
+        revExer.add(RevVo("vSquat", "예약가능"))
+        revExer.add(RevVo("facePull", "예약가능"))
         revExer.add(RevVo("dips", "예약가능"))
-
 
         val adapter = RevAdapter(applicationContext, revExer, mb_card.toString()) //파라미터값으로 mb_card 변수 추가
         rcRev.adapter = adapter

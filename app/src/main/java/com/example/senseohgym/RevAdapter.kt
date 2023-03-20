@@ -22,6 +22,7 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
 
     private var queue = Volley.newRequestQueue(context)
     private lateinit var request: StringRequest
+    private var request1 = listOf<StringRequest>()
 
     private lateinit var exer_name: TextView
     private lateinit var rev_ox: TextView // 예약여부
@@ -51,7 +52,7 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
         holder.rev_ox.text = data[position].rev
         Log.d("운동기구명 확인",exerName)
 
-        var url = "http://221.156.243.155:8081/Senseohgym/Reservation_after.do"
+        var url = "http://211.107.188.212:8081/Senseohgym/Reservation_after.do"
         // 요청 보낼 프로그램 주소 만들기
         // 기구 이름 빼서 그 기구이름으로 된 예약정보가 있는지 확인 후
         // 있으면 1 보내주고 없으면 0 보내주기
