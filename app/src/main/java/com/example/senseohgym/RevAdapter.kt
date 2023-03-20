@@ -103,4 +103,3 @@ class RevAdapter(var context: Context, var data: ArrayList<RevVo>, var mb_card: 
     }
 }
 
-
