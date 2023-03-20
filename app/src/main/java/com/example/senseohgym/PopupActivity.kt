@@ -41,7 +41,7 @@ class PopupActivity : AppCompatActivity() {
             val mb_card = intent.getStringExtra("mb_card") // 카드번호
 
             // 예약관련파일 url 값
-            var url = "http://221.156.243.155:8081/Senseohgym/Reservation_Join.do"
+            var url = "http://211.107.188.212:8081/Senseohgym/Reservation_Join.do"
 
             btn_OK.setOnClickListener {
 
@@ -105,4 +105,3 @@ class PopupActivity : AppCompatActivity() {
         }
     }
 }
-
