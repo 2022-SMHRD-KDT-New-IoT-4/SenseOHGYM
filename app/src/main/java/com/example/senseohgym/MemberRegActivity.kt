@@ -16,14 +16,14 @@ import org.json.JSONObject
 
 class MemberRegActivity : AppCompatActivity() {
     private lateinit var queue: RequestQueue
-    private lateinit var request : StringRequest
+    private lateinit var request: StringRequest
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_reg)
 
 
-        queue  = Volley.newRequestQueue(this)
+        queue = Volley.newRequestQueue(this)
 
         val gym_name1 = intent.getStringExtra("gym_name")
 
@@ -38,7 +38,7 @@ class MemberRegActivity : AppCompatActivity() {
 
         gym_name.setText(gym_name1)
 
-        var url = "http://221.156.243.155:8081/Senseohgym/Member_Join.do"
+        var url = "http://211.107.188.212:8081/Senseohgym/Member_Join.do"
 
 
         var check = ""
@@ -57,7 +57,7 @@ class MemberRegActivity : AppCompatActivity() {
             val gymName = gym_name.text.toString()
             val type = mb_type1.text.toString()
             val card = mb_card.text.toString()
-1
+            1
             // 이름 통일 필요
             intent.putExtra("mb_gender", check)
             intent.putExtra("mb_birthdate", birthday)
@@ -75,10 +75,6 @@ class MemberRegActivity : AppCompatActivity() {
                         Toast.makeText(this, "회원등록 재시도 바람.", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this, "회원등록성공!", Toast.LENGTH_SHORT).show()
-
-
-                        startActivity(intent)
-
                     }
                 },
                 { error ->
@@ -101,7 +97,9 @@ class MemberRegActivity : AppCompatActivity() {
 
             request.setShouldCache(false)
             queue.add(request)
-
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+            finish()
         }
     }
 }

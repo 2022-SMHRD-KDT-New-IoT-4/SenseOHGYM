@@ -23,7 +23,6 @@ class Ex5Activity : AppCompatActivity() {
             startActivity(intent)
 
 
-
         }
 
     }

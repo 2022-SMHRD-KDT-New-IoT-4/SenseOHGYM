@@ -20,5 +20,6 @@ class Ex8Activity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
 
+        }
     }
-}}
+}

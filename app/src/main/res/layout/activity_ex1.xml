@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#112350"
-    android:padding="10dp"
     tools:context=".Ex1Activity">
 
 
@@ -13,13 +12,14 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:fontFamily="@font/cute"
-        android:text="CHEST FLY"
+        android:text="CHEST\nFLY"
         android:textColor="#FFFFFF"
         android:textSize="34dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btnExer01"
+        app:layout_constraintEnd_toStartOf="@+id/btnExer01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnExer01"
         tools:ignore="MissingConstraints" />
@@ -182,6 +182,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ex01" />

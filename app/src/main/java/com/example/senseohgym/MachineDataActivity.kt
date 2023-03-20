@@ -1,5 +1,3 @@
-
-
 package com.example.senseohgym
 
 import android.graphics.Color
@@ -25,7 +23,7 @@ import java.text.NumberFormat
 class MachineDataActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
-    private lateinit var request : StringRequest
+    private lateinit var request: StringRequest
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +40,7 @@ class MachineDataActivity : AppCompatActivity() {
 
         request = object : StringRequest(
             Request.Method.POST, url,
-            {response ->
+            { response ->
                 Log.d("운동정보 결과", response.toString())
                 val result = JSONArray(response)
 
@@ -53,29 +51,31 @@ class MachineDataActivity : AppCompatActivity() {
 
                 val machine_list = ArrayList<machineVO>()
                 var machineList = mutableListOf<Chart>()
-                var sum : Int = 0
+                var sum: Int = 0
 
 
 
-                for(i in 0 until result.length()){
+                for (i in 0 until result.length()) {
                     val machine = result.getJSONObject(i)
-                    machine_list.add(machineVO(
-                        machine.getString("rev_machine"),
-                        machine.getInt("machine_count")
+                    machine_list.add(
+                        machineVO(
+                            machine.getString("rev_machine"),
+                            machine.getInt("machine_count")
 
-                    ))
+                        )
+                    )
                     sum += machine.getInt("machine_count")
-                    Log.d("sum Check",sum.toString())
+                    Log.d("sum Check", sum.toString())
                 }
 
 
-                for(i in 0 until machine_list.size){
-                    var y : String  = machine_list.get(i).rev_machine
-                    var x : Float
+                for (i in 0 until machine_list.size) {
+                    var y: String = machine_list.get(i).rev_machine
+                    var x: Float
                     var count = machine_list.get(i).machine_count.toInt()
-                    x = (count*100 / sum).toFloat()
+                    x = (count * 100 / sum).toFloat()
                     Log.d("x확인", x.toString())
-                    machineList.add(Chart(x,y))
+                    machineList.add(Chart(x, y))
                 }
                 Log.d("size : ", machineList.size.toString())
                 Log.d("data", machineList.get(0).x.toString())
@@ -111,7 +111,8 @@ class MachineDataActivity : AppCompatActivity() {
                     Color.parseColor("#fdc135"),
                     Color.parseColor("#fd9a47"),
                     Color.parseColor("#eb6e7a"),
-                    Color.parseColor("#6785c2"))
+                    Color.parseColor("#6785c2")
+                )
                 dataSet.colors = colors
                 dataSet.setValueTextColors(colors)
 
@@ -162,17 +163,17 @@ class MachineDataActivity : AppCompatActivity() {
                 pieChart.data = PieData(dataSet)
 
                 // 운동기구 갯수는 result.length() 를 사용
-                Log.d("운동기구이름",result.getJSONObject(0).getString("rev_machine"))
-                Log.d("사용횟수",result.getJSONObject(0).getString("machine_count"))
+                Log.d("운동기구이름", result.getJSONObject(0).getString("rev_machine"))
+                Log.d("사용횟수", result.getJSONObject(0).getString("machine_count"))
 
             },
-            {error ->
+            { error ->
                 Log.d("통신오류", error.printStackTrace().toString())
             }
-        ){
+        ) {
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
-                val params : MutableMap<String, String> = HashMap()
+                val params: MutableMap<String, String> = HashMap()
 
                 params["gym_name"] = gym_name
 
@@ -182,8 +183,6 @@ class MachineDataActivity : AppCompatActivity() {
 
         request.setShouldCache(false)
         queue.add(request)
-
-
 
 
     }

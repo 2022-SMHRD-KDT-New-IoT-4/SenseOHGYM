@@ -23,7 +23,6 @@ class Ex4Activity : AppCompatActivity() {
             startActivity(intent)
 
 
-
         }
 
     }
