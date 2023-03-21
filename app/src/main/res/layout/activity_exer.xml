@@ -144,11 +144,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/cute"
         android:text="기구정보"
         android:textColor="#FFFFFF"
-        android:textSize="34sp"
+        android:textSize="42dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -158,9 +158,9 @@
         android:layout_width="92dp"
         android:layout_height="82dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView8"
         app:srcCompat="@drawable/machine2" />
 
     <Button
