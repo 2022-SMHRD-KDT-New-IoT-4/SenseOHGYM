@@ -48,7 +48,6 @@ class ChartActivity : AppCompatActivity() {
 
         val barChart = findViewById<BarChart>(R.id.barchart)
 
-
         request = object : StringRequest(
             Method.POST, url,
 
@@ -69,7 +68,6 @@ class ChartActivity : AppCompatActivity() {
 
                     val myHealth_list = ArrayList<myHealthVO>()
 
-
                     for (i in 0 until response1.length()) {
                         val myHealth = response1.getJSONObject(i)
                         myHealth_list.add(
@@ -78,7 +76,6 @@ class ChartActivity : AppCompatActivity() {
                                 myHealth.getString("REG_DATE_FORMATTED").substring(3)
                             )
                         )
-
                     }
                     for (i in 0 until myHealth_list.size) {
                         var y: Int = myHealth_list.get(i).total_usetime
@@ -89,7 +86,6 @@ class ChartActivity : AppCompatActivity() {
                         time_list.add(BarEntry(i.toFloat() + 1, y.toFloat()))
 
                         Log.d("time_list값", time_list.get(i).toString())
-
                     }
                     initBarChart(barChart)
                     setData(barChart)
@@ -162,7 +158,9 @@ class ChartActivity : AppCompatActivity() {
 
                     else -> throw IndexOutOfBoundsException("index out")
 
-                } } }
+                }
+            }
+        }
 
         // 바차트의 설정
         val legend: Legend = barChart.legend
@@ -204,7 +202,8 @@ class ChartActivity : AppCompatActivity() {
             Color.rgb(231, 76, 60), Color.rgb(26, 188, 156),
             Color.rgb(241, 196, 15),
             Color.rgb(52, 152, 219), Color.rgb(163, 78, 198),
-            Color.rgb(243, 156, 18), Color.rgb(75, 56, 234))
+            Color.rgb(243, 156, 18), Color.rgb(75, 56, 234)
+        )
 
         val data = BarData(barDataSet)
         barChart.data = data

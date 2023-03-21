@@ -51,6 +51,7 @@ class Rev1_1Activity : AppCompatActivity() {
         revExer.add(RevVo("dips", "예약가능"))
 
         val adapter = RevAdapter(applicationContext, revExer, mb_card.toString()) //파라미터값으로 mb_card 변수 추가
+
         adapter.SetOnItemClickListener(object : RevAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 finish()

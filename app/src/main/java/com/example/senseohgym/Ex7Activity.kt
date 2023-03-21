@@ -21,6 +21,6 @@ class Ex7Activity : AppCompatActivity() {
             startActivity(intent)
 
 
-
+        }
     }
-}}
+}

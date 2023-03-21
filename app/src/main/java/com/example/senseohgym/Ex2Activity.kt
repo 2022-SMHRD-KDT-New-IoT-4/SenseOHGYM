@@ -21,10 +21,7 @@ class Ex2Activity : AppCompatActivity() {
             startActivity(intent)
 
 
-
         }
-
-
 
 
     }

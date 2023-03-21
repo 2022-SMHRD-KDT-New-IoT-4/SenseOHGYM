@@ -17,6 +17,15 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
     RecyclerView.Adapter<manageAdapter1.ViewHolder>() {
     var selectPos = -1
 
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    var mListener: OnItemClickListener? = null
+    fun SetOnItemClickListener(listener: OnItemClickListener?) {
+        mListener = listener!!
+    }
+
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var mgName: TextView
         var mgCard: TextView
@@ -32,6 +41,18 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
             mgGender = view.findViewById(R.id.mgGender)
             mgJoinDate = view.findViewById(R.id.mgJoinDate)
             LL = view.findViewById(R.id.LL)
+        }
+
+        fun ViewHolder(itemView: View) {
+            super.itemView
+            itemView.setOnClickListener {
+                val pos = adapterPosition
+                if (pos != RecyclerView.NO_POSITION) {
+                    if (mListener != null) {
+                        mListener!!.onItemClick(pos)
+                    }
+                }
+            }
         }
     }
 
@@ -53,10 +74,7 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
         holder.mgJoinDate.text = data[position].joindate
 
         if (selectPos == position) {
-            holder.LL.setBackgroundColor(Color.parseColor("#aaaaaa"))
-
             val intent = Intent(context, ManageUpdateActivity::class.java)
-
             intent.putExtra("name", holder.mgName.text.toString())
             intent.putExtra("card", holder.mgCard.text.toString())
             intent.putExtra("birth", holder.mgBirth.text.toString())
@@ -64,11 +82,8 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
             intent.putExtra("joindate", holder.mgJoinDate.text.toString())
             intent.putExtra("gym_name", data[position].healthname)
 
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             context.startActivity(intent)
-            (context as Activity).finish()
-        } else {
-            holder.LL.setBackgroundColor(Color.parseColor("#00ff0000"))
         }
         holder.LL.setOnClickListener {
             var beforePos = selectPos
@@ -76,7 +91,6 @@ class manageAdapter(var context: Context, var data: ArrayList<manageVO>) :
 
             notifyItemChanged(beforePos)
             notifyItemChanged(selectPos)
-
         }
     }
 }

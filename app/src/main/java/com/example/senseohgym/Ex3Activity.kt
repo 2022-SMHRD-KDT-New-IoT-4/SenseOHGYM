@@ -23,9 +23,7 @@ class Ex3Activity : AppCompatActivity() {
             startActivity(intent)
 
 
-
         }
-
 
 
     }

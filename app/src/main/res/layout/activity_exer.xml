@@ -65,55 +65,53 @@
         android:id="@+id/btnEx5"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
         android:text="arm pull down"
         android:textSize="18dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/btnEx3" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
         android:id="@+id/btnEx6"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
         android:text="leg press"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/btnEx4" />
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
         android:id="@+id/btnExer1"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
         android:text="chest fly"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/btnEx3"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline7" />
 
     <Button
         android:id="@+id/btnEx2"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#3498DB"
         android:fontFamily="@font/cute"
         android:text="chest press"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/btnEx4"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintStart_toStartOf="@+id/guideline7" />
 
     <Button
         android:id="@+id/btnEx7"

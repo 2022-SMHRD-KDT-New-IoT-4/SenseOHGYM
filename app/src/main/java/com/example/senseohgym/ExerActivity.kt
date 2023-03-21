@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+
 // 메인 페이지 - 예약/취소하기 탭에서 두번째 버튼에 기구 정보 탭 시작 액티비티입니다
 class ExerActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
