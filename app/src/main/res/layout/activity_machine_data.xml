@@ -25,8 +25,8 @@
         android:id="@+id/piechart"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
         android:background="#112350"
         android:clipToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,8 +38,9 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="120dp"
-        android:layout_height="125dp"
+        android:layout_width="90dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/piechart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/piechart"
