@@ -20,5 +20,6 @@ class Ex9Activity : AppCompatActivity() {
             val uri = Uri.parse("https://www.youtube.com/watch?v=2ZGmW0k-eUk")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
+        }
     }
-}}
+}
