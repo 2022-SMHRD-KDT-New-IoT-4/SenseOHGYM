@@ -1,3 +1,4 @@
+
 package com.example.senseohgym
 
 import android.graphics.Color
@@ -88,6 +89,7 @@ class McActivity : AppCompatActivity() {
                         Color.rgb(52, 152, 219),
                     )
 
+
                     // BarData 생성
                     val data = BarData(dataSet)
 
@@ -145,6 +147,7 @@ class McActivity : AppCompatActivity() {
                                 2 -> xArray[1]
                                 3 -> xArray[2]
                                 4 -> xArray[3]
+                                5 -> xArray[4]
 
 //                                1 -> "벤치 프레스"
 //                                2 -> xArray[0]
@@ -174,7 +177,7 @@ class McActivity : AppCompatActivity() {
                     mcChart.setDrawValueAboveBar(false)
 
                     // 차트 최대 몇 개로 보여줄지 - 6개니까 7까지
-                    mcChart.setVisibleXRange(7F, 7F)
+                    mcChart.setVisibleXRange(6F, 6F)
 
                     mcChart.invalidate()
 
@@ -183,10 +186,10 @@ class McActivity : AppCompatActivity() {
             },
             { error ->
                 Log.d("통신오류", error.printStackTrace().toString());
-            }) {
+            }){
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
-                val params: MutableMap<String, String> = HashMap()
+                val params : MutableMap<String, String> = HashMap()
 
                 params["mb_card"] = mb_card.toString()
 
@@ -197,11 +200,8 @@ class McActivity : AppCompatActivity() {
                 return params
             }
         }
-
         request.setShouldCache(false)
         queue.add(request)
-
-// bar 데이터 생성
 
     }
 }
