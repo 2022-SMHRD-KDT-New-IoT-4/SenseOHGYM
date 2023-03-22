@@ -13,13 +13,12 @@ class Ex6Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex6)
 
-        val btnExer06 = findViewById<ImageButton>(R.id.btnExer05)
+        val btnExer06 = findViewById<ImageButton>(R.id.btnExer06)
 
         btnExer06.setOnClickListener {
             val uri = Uri.parse("https://www.youtube.com/watch?v=v8fTr5MEFkI")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
-
 
 
         }

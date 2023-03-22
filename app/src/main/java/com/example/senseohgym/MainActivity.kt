@@ -1,15 +1,40 @@
 package com.example.senseohgym
 
 import android.annotation.SuppressLint
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageButton
+import android.widget.TextView
+import android.widget.Toast
 import kotlin.math.log
 
 // 메인 화면 액티비티입니다
 class MainActivity : AppCompatActivity() {
+
+    private var backPressedTime: Long = 0
+    private var backToast: Toast? = null
+
+    override fun onBackPressed() {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast?.cancel()
+            super.onBackPressed()
+            finish() // 현재 액티비티 종료
+            return
+        } else {
+            backToast = Toast.makeText(
+                this,
+                "한번 더 누르시면 앱이 종료됩니다.",
+                Toast.LENGTH_SHORT
+            )
+            backToast?.show()
+        }
+        backPressedTime = System.currentTimeMillis()
+    }
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val btnRev = findViewById<ImageButton>(R.id.btnRev)
         val btnExerInfo = findViewById<ImageButton>(R.id.btnExerInfo)
         val btnSetting = findViewById<ImageButton>(R.id.btnSetting)
+        val textal = findViewById<TextView>(R.id.textal)
 
 
         // 1번째 운동정보로 가지는 ( 차트랑 표 있는.. )
@@ -51,6 +77,31 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, MemberHelpActivity::class.java)
             startActivity(intent)
         }
+
+        textal.setOnClickListener(object : DialogInterface.OnClickListener, View.OnClickListener {
+            override fun onClick(v: View?) {
+                val builder: android.app.AlertDialog.Builder =
+                    android.app.AlertDialog.Builder(this@MainActivity)
+                builder.setTitle("예약하신 운동기구에서\n사용알림이 도착하였습니다.")
+                builder.setPositiveButton("운동하러 가기",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        Toast.makeText(applicationContext, "Confirm", Toast.LENGTH_LONG).show()
+                        dialog.cancel()
+                    })
+                builder.setNegativeButton("취소",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        Toast.makeText(applicationContext, "Clicked Cancel", Toast.LENGTH_SHORT)
+                            .show()
+                        dialog.cancel()
+                    })
+                val alertD: android.app.AlertDialog? = builder.create()
+                alertD?.show()
+            }
+
+            override fun onClick(p0: DialogInterface?, p1: Int) {
+                TODO("Not yet implemented")
+            }
+        })
 
     }
 }

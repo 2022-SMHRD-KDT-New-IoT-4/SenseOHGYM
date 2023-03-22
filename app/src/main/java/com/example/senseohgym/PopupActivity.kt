@@ -41,7 +41,7 @@ class PopupActivity : AppCompatActivity() {
             val mb_card = intent.getStringExtra("mb_card") // 카드번호
 
             // 예약관련파일 url 값
-            var url = "http://221.156.243.155:8081/Senseohgym/Reservation_Join.do"
+            var url = "http://211.107.188.212:8081/Senseohgym/Reservation_Join.do"
 
             btn_OK.setOnClickListener {
 
@@ -70,7 +70,7 @@ class PopupActivity : AppCompatActivity() {
                                     "예약 성공입니다.",
                                     Toast.LENGTH_SHORT
                                 ).show()
-                                startActivity(intent)
+
                             } else {
                                 Toast.makeText(context, "예약실패!", Toast.LENGTH_SHORT).show()
                                 val response1 = JSONObject(response)
@@ -100,9 +100,14 @@ class PopupActivity : AppCompatActivity() {
                 }
             }
             btn_Can.setOnClickListener {
+                var intent = Intent(this@PopupActivity, Rev1_1Activity::class.java)
+                startActivity(intent)
                 finish()
+//                var intent = Intent(this@PopupActivity, RevAdapter::class.java)
+//                startActivity(intent)
             }
         }
     }
-}
 
+
+}

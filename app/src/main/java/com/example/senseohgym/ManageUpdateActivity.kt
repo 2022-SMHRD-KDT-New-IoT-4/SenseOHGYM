@@ -15,8 +15,9 @@ import org.json.JSONObject
 class ManageUpdateActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
-    private lateinit var updateRequest : StringRequest
-    private lateinit var deleteRequest : StringRequest
+    private lateinit var updateRequest: StringRequest
+    private lateinit var deleteRequest: StringRequest
+
     @SuppressLint("WrongViewCast", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,10 +43,10 @@ class ManageUpdateActivity : AppCompatActivity() {
 
         // 라디오버튼 체크 값 넣어놓기
         var check = ""
-        if(mbGender == "남"){
+        if (mbGender == "남") {
             chMan2.isChecked = true
             check = "남"
-        }else {
+        } else {
             chWoman2.isChecked = true
             check = "여"
         }
@@ -55,10 +56,6 @@ class ManageUpdateActivity : AppCompatActivity() {
         updateBirth.setText(mbBirth)
         updateHealth.setText(gymName)
 
-//        updateAge.setText(mbAge)
-//        updateName.setText(mbJoinDate)
-
-
         rg2.setOnCheckedChangeListener { group, checkid ->
             if (checkid == R.id.chMan2) {
                 check = "남"
@@ -66,7 +63,6 @@ class ManageUpdateActivity : AppCompatActivity() {
                 check = "여"
             }
         }
-
 
         // 회원정보 수정
         btnbtnUpdate.setOnClickListener {
@@ -78,25 +74,26 @@ class ManageUpdateActivity : AppCompatActivity() {
             // 요청 생성 POST 방식
             updateRequest = object : StringRequest(
                 Method.POST, url,
-                {response ->
-                    Log.d("결과",response.toString())
-                    val result : Int = response.toInt()
-                    if(result > 0){
-                        Toast.makeText(this,"회원수정완료", Toast.LENGTH_SHORT).show()
-                        intent.putExtra("gym_name",updateHealth.text.toString())
-                    }else{
-                        Toast.makeText(this,"회원수정실패", Toast.LENGTH_SHORT).show()
-                        intent.putExtra("gym_name",gymName)
+                { response ->
+                    Log.d("결과", response.toString())
+                    val result: Int = response.toInt()
+                    if (result > 0) {
+                        Toast.makeText(this, "회원수정완료", Toast.LENGTH_SHORT).show()
+                        intent.putExtra("gym_name", updateHealth.text.toString())
+                    } else {
+                        Toast.makeText(this, "회원수정실패", Toast.LENGTH_SHORT).show()
+                        intent.putExtra("gym_name", gymName)
                     }
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                     finish()
                 },
-                {error ->
+                { error ->
                     Log.d("통신오류", error.printStackTrace().toString());
-                }){
+                }) {
                 @Throws(AuthFailureError::class)
                 override fun getParams(): MutableMap<String, String>? {
-                    val params : MutableMap<String, String> = HashMap()
+                    val params: MutableMap<String, String> = HashMap()
 
                     params["mb_name"] = updateName.text.toString()
                     params["mb_card"] = mbCard.toString()
@@ -110,7 +107,6 @@ class ManageUpdateActivity : AppCompatActivity() {
 
             updateRequest.setShouldCache(false)
             queue.add(updateRequest)
-
         }
 
         // 회원정보 삭제
@@ -122,41 +118,36 @@ class ManageUpdateActivity : AppCompatActivity() {
 
             deleteRequest = object : StringRequest(
                 Method.POST, url,
-                {response ->
-                    Log.d("결과",response.toString())
-                    val result : Int = response.toInt()
-                    if(result > 0){
-                        Toast.makeText(this,"회원삭제완료", Toast.LENGTH_SHORT).show()
-                        intent.putExtra("gym_name",updateHealth.text.toString())
-                    }else{
-                        Toast.makeText(this,"회원삭제실패", Toast.LENGTH_SHORT).show()
-                        intent.putExtra("gym_name",gymName)
+                { response ->
+                    Log.d("결과", response.toString())
+                    val result: Int = response.toInt()
+                    if (result > 0) {
+                        Toast.makeText(this, "회원삭제완료", Toast.LENGTH_SHORT).show()
+                        intent.putExtra("gym_name", updateHealth.text.toString())
+                    } else {
+                        Toast.makeText(this, "회원삭제실패", Toast.LENGTH_SHORT).show()
+                        intent.putExtra("gym_name", gymName)
                     }
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                     finish()
                 },
-                {error ->
+                { error ->
                     Log.d("통신오류", error.printStackTrace().toString());
-                }){
+                }) {
                 @Throws(AuthFailureError::class)
                 override fun getParams(): MutableMap<String, String>? {
-                    val params : MutableMap<String, String> = HashMap()
+                    val params: MutableMap<String, String> = HashMap()
 
                     params["mb_name"] = updateName.text.toString()
                     params["mb_card"] = updateCard.text.toString()
                     params["gym_name"] = updateHealth.text.toString()
 
-
                     return params
                 }
             }
-
             deleteRequest.setShouldCache(false)
             queue.add(deleteRequest)
-
-
         }
-
-
     }
 }

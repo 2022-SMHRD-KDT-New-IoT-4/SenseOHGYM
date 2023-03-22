@@ -20,17 +20,15 @@ import java.lang.invoke.MethodHandle
 class ManageActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
-    private lateinit var request : StringRequest
+    private lateinit var request: StringRequest
+
     //private lateinit var result : JSONArray
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_manage)
 
-
         val manageRc = findViewById<RecyclerView>(R.id.manageRc)
         val tvManageTitle = findViewById<TextView>(R.id.tvManageTitle)
-
-
 
         // 서버와 통신하는 부분
         queue = Volley.newRequestQueue(this)
@@ -41,81 +39,54 @@ class ManageActivity : AppCompatActivity() {
 
         request = object : StringRequest(
             Method.POST, url,
-            {response ->
-                Log.d("회원목록 결과",response.toString())
+            { response ->
+                Log.d("회원목록 결과", response.toString())
                 val result = JSONArray(response)
 
                 val manage_list = ArrayList<manageVO>()
 
-                for(i in 0 until result.length()){
+                for (i in 0 until result.length()) {
                     val manage = result.getJSONObject(i)
-                    manage_list.add(manageVO(
-                        manage.getString("mb_name"),
-                        manage.getString("mb_card"),
-                        manage.getString("mb_birthdate"),
-                        manage.getString("mb_gender"),
-                        manage.getString("mb_joindate"),
-                        manage.getString("gym_name")
-                    ))
+                    manage_list.add(
+                        manageVO(
+                            manage.getString("mb_name"),
+                            manage.getString("mb_card"),
+                            manage.getString("mb_birthdate"),
+                            manage.getString("mb_gender"),
+                            manage.getString("mb_joindate"),
+                            manage.getString("gym_name")
+                        )
+                    )
                 }
 
-                //manage_list.add(manageVO("김깅지","120","11.11.11","남","23.03.10"))
-
                 val adapter = manageAdapter(this, manage_list)
+
+                adapter.SetOnItemClickListener(object : manageAdapter.OnItemClickListener {
+                    override fun onItemClick(position: Int) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
+                        finish()
+// adapter사용해서 열린 activity 닫는 방법 >> adapter내부에 item 클릭했을 때 실행할 수 있는 interface 함수를 하나 정의
+                    }
+                })
+
                 manageRc.adapter = adapter
                 manageRc.layoutManager = LinearLayoutManager(this)
 
-//                btnManage.setOnClickListener {
-//                    val intent = Intent(this, ManageUpdateActivity::class.java)
-//
-//
-//                    startActivity(intent)
-//                }
             },
-            {error ->
+            { error ->
                 Log.d("통신오류", error.printStackTrace().toString())
-            })
-
-
-        {
+            }) {
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
-                val params : MutableMap<String, String> = HashMap()
+                val params: MutableMap<String, String> = HashMap()
 
                 params["gym_name"] = gym_name
 
                 return params
             }
         }
-
         request.setShouldCache(false)
         queue.add(request)
-
-
-
-
-
-
-//        val manage_list = ArrayList<manageVO>()
-//
-//        for(i in 0 until result.length()){
-//            val manage = result.getJSONObject(i)
-//            manage_list.add(manageVO(manage.getString("mb_name",),manage.getString("mb_card"),
-//            manage.getString("mb_birthdate"),manage.getString("mb_gender"), manage.getString("mb_joindate")))
-//        }
-//
-//        //manage_list.add(manageVO("김깅지","120","11.11.11","남","23.03.10"))
-//
-//        val adapter = manageAdapter(applicationContext, manage_list)
-//        manageRc.adapter = adapter
-//        manageRc.layoutManager = LinearLayoutManager(this)
-//
-//        btnManage.setOnClickListener {
-//            val intent = Intent(this, ManageUpdateActivity::class.java)
-//            startActivity(intent)
-//        }
-
-
-
     }
 }
