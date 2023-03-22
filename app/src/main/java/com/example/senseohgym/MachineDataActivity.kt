@@ -32,7 +32,7 @@ class MachineDataActivity : AppCompatActivity() {
         val gym_name = intent.getStringExtra("gym_name").toString()
 
         val pieChart: PieChart = findViewById(R.id.piechart)
-        pieChart.setExtraOffsets(40f, 0f, 40f, 0f)
+        pieChart.setExtraOffsets(35f, 0f, 50f, 0f)
 
         queue = Volley.newRequestQueue(this)
 
@@ -80,25 +80,6 @@ class MachineDataActivity : AppCompatActivity() {
                 Log.d("size : ", machineList.size.toString())
                 Log.d("data", machineList.get(0).x.toString())
 
-//                machineList.add(Chart(40f, machine.getString("rev_machine")))
-
-
-                //                    val entries = listOf(
-//
-////                    for(i in 0 until machine_list.size){
-////
-////                    }
-//                    서버에서 보내준 값을 넣는 부분
-//                    Chart(40f, "런닝머신"),
-//                    Chart(10f, "바벨"),
-//                    //CustomPieEntry(10f, "싸이클"),
-//                    Chart(15f, "영이"),
-//                    Chart(10f, "솔"),
-//                    Chart(5f,"혜수"),
-//                    Chart(5f,"담희"),
-//                    Chart(5f,"윤한"),)
-
-
                 // 차트 색상들
 
                 val dataSet = PieDataSet(machineList as List<PieEntry>?, "Pie Data")
@@ -106,7 +87,6 @@ class MachineDataActivity : AppCompatActivity() {
                 val colors = listOf(
                     Color.parseColor("#4777c0"),
                     Color.parseColor("#a374c6"),
-                    //Color.parseColor("#4fb3e8"),
                     Color.parseColor("#99cf43"),
                     Color.parseColor("#fdc135"),
                     Color.parseColor("#fd9a47"),
@@ -141,20 +121,17 @@ class MachineDataActivity : AppCompatActivity() {
                 pieChart.setUsePercentValues(true)
                 dataSet.selectionShift = 3f
 
+                pieChart.minimumWidth = 1200
+                pieChart.minimumHeight = 1200
+
+
                 // Hole
-                pieChart.isDrawHoleEnabled = true
-                pieChart.holeRadius = 50f
-
-                // 차트 안의 텍스트 스타일 변경...
-
-                //val face = Typeface.createFromAsset(context.assets, "cute")
-                //pieChart.setValueTypeface(face)
+                pieChart.isDrawHoleEnabled = false
+                pieChart.holeRadius = 30f
 
                 // 이것도 같은 사이즈 변경인가????
                 dataSet.setValueTextSize(20f)
 
-                // 차트 백그라운 변경
-                //pieChart.setBackgroundColor(Color.parseColor("#112340"))
 
                 // Disable legend & description
                 pieChart.legend.isEnabled = false
@@ -180,11 +157,8 @@ class MachineDataActivity : AppCompatActivity() {
                 return params
             }
         }
-
         request.setShouldCache(false)
         queue.add(request)
-
-
     }
 
 }
