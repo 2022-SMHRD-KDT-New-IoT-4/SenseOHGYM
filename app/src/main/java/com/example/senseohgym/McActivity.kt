@@ -1,3 +1,4 @@
+
 package com.example.senseohgym
 
 import android.graphics.Color
@@ -84,9 +85,10 @@ class McActivity : AppCompatActivity() {
                     val dataSet = BarDataSet(entries as List<BarEntry>?, "Bar Data")
                     dataSet.setColors(
                         Color.rgb(231, 76, 60), Color.rgb(26, 188, 156),
-                        Color.rgb(241, 196, 15),
+                        Color.rgb(241, 196, 15), Color.rgb(80, 196, 70),
                         Color.rgb(52, 152, 219),
                     )
+
 
                     // BarData 생성
                     val data = BarData(dataSet)
@@ -104,7 +106,7 @@ class McActivity : AppCompatActivity() {
 
                     // 간격설정...조정해도 잘린다.....
                     xAxis.granularity = 1f
-                    xAxis.axisMinimum = 0f
+                    xAxis.axisMinimum = 1f
 
                     val leftAxis = mcChart.axisLeft
                     leftAxis.setDrawGridLines(false)
@@ -117,7 +119,7 @@ class McActivity : AppCompatActivity() {
 
                     // 아래 축 최소 최대 값
                     yAxis.axisMinimum = 1f
-                    yAxis.axisMaximum = 3f
+                    yAxis.axisMaximum = 8f
 
                     val lyAxis = mcChart.axisLeft
                     //lyAxis.setTextColor(Color.rgb(17, 35, 200),)
@@ -128,15 +130,11 @@ class McActivity : AppCompatActivity() {
 
                     // bar 안에 표시되는 값의 위치와 글꼴 설정
 
-                    Log.d("여기확인", xArray.toString())
-
-
                     var index = 0
                     val valueFormatter = object : ValueFormatter() {
                         override fun getFormattedValue(value: Float): String {
                             index = value.toInt()
 
-                            Log.d("도착확인2", "도착")
                             Log.d("값확인", value.toString())
 
                             return when (index) {
@@ -145,13 +143,8 @@ class McActivity : AppCompatActivity() {
                                 2 -> xArray[1]
                                 3 -> xArray[2]
                                 4 -> xArray[3]
+                                5 -> xArray[4]
 
-//                                1 -> "벤치 프레스"
-//                                2 -> xArray[0]
-//                                3 -> xArray[1]
-//                                4 -> "바벨"
-//                                5 -> "바벨"
-//                                6 -> "바벨"
                                 else -> throw IndexOutOfBoundsException("index out")
 
 
@@ -174,7 +167,7 @@ class McActivity : AppCompatActivity() {
                     mcChart.setDrawValueAboveBar(false)
 
                     // 차트 최대 몇 개로 보여줄지 - 6개니까 7까지
-                    mcChart.setVisibleXRange(7F, 7F)
+                    mcChart.setVisibleXRange(6F, 6F)
 
                     mcChart.invalidate()
 
@@ -183,10 +176,10 @@ class McActivity : AppCompatActivity() {
             },
             { error ->
                 Log.d("통신오류", error.printStackTrace().toString());
-            }) {
+            }){
             @Throws(AuthFailureError::class)
             override fun getParams(): MutableMap<String, String>? {
-                val params: MutableMap<String, String> = HashMap()
+                val params : MutableMap<String, String> = HashMap()
 
                 params["mb_card"] = mb_card.toString()
 
@@ -197,11 +190,8 @@ class McActivity : AppCompatActivity() {
                 return params
             }
         }
-
         request.setShouldCache(false)
         queue.add(request)
-
-// bar 데이터 생성
 
     }
 }

@@ -194,7 +194,7 @@ class ChartActivity : AppCompatActivity() {
 
         // Zoom In / Out 가능 여부 설정
         barChart.setScaleEnabled(false)
-        val title = "3/10~3/15"
+        val title = "${xArray[0]} ~ ${xArray[6]}"
 
         val barDataSet = BarDataSet(time_list, title)
         // 바 색상 설정 (ColorTemplate.LIBERTY_COLORS)
