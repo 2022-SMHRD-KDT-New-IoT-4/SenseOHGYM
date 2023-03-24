@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
+import android.view.textclassifier.TextClassificationSessionId
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
@@ -15,6 +16,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
+import kotlinx.coroutines.yield
 import org.json.JSONArray
 import java.text.NumberFormat
 
@@ -32,7 +34,7 @@ class MachineDataActivity : AppCompatActivity() {
         val gym_name = intent.getStringExtra("gym_name").toString()
 
         val pieChart: PieChart = findViewById(R.id.piechart)
-        pieChart.setExtraOffsets(35f, 0f, 50f, 0f)
+        pieChart.setExtraOffsets(30f, 0f, 45f, 0f)
 
         queue = Volley.newRequestQueue(this)
 
@@ -121,16 +123,23 @@ class MachineDataActivity : AppCompatActivity() {
                 pieChart.setUsePercentValues(true)
                 dataSet.selectionShift = 3f
 
+                // 파이 차트 길이, 넓이
                 pieChart.minimumWidth = 1200
                 pieChart.minimumHeight = 1200
 
 
+                pieChart.setEntryLabelTextSize(20f);
+
+
+
                 // Hole
                 pieChart.isDrawHoleEnabled = false
-                pieChart.holeRadius = 30f
 
-                // 이것도 같은 사이즈 변경인가????
+
+                // 이것은 숫자 텍스트 사이즈
                 dataSet.setValueTextSize(20f)
+
+
 
 
                 // Disable legend & description
